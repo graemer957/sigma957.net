@@ -1,0 +1,5 @@
+.DS_Store
+.dockerignore
+.git
+.gitlab-ci.yml
+Dockerfile

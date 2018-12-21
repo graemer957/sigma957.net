@@ -3,6 +3,7 @@ FROM registry.gitlab.com/graemer957/hugo AS builder
 
 WORKDIR /site
 COPY . .
+RUN pwd && ls -alh
 RUN hugo
 
 # Use nginx for serving

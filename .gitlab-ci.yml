@@ -1,3 +1,6 @@
+variables:
+  IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+
 stages:
   - build
 
@@ -13,5 +16,5 @@ build:
   before_script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
   script:
-    - docker build --no-cache --pull -t $CI_REGISTRY_IMAGE .
-    - docker push $CI_REGISTRY_IMAGE
+    - docker build --no-cache --pull -t $IMAGE_TAG .
+    - docker push $IMAGE_TAG

@@ -1,4 +1,39 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+baseURL = "httsp://sigma957.net/"
+languageCode = "en-gb"
+defaultContentLanguage = "en"
+title = "Graeme Read"
 theme = "hermit"
+rssLimit = 10
+pygmentsCodefences  = true
+pygmentsUseClasses = true
+copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
+
+[author]
+name = "Graeme Read"
+
+[params]
+dateform        = "Jan 2, 2006"
+dateformShort   = "Jan 2"
+dateformNum     = "2006-01-02"
+dateformNumTime = "2006-01-02 15:04 -0000"
+
+homeSubtitle = "Life is not measured by the number of breaths we take, but by the moments that take our breath away."
+footerCopyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+justifyContent = false  # Set "text-align: justify" to .content, requires extended version of Hugo
+
+# Social Icons
+[[params.social]]
+name = "email"
+url = "mailto:graeme@sigma957.net"
+
+[[params.social]]
+name = "github"
+url = "https://github.com/graemer957"
+
+[[params.social]]
+name = "gitlab"
+url = "https://gitlab.com/graemer957"
+
+[[params.social]]
+name = "linkedin"
+url = "https://www.linkedin.com/in/graeme-read-741842a5/"

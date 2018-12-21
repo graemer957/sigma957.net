@@ -8,8 +8,8 @@ build:
    - docker:dind
   tags:
     - docker
-  # only:
-  #   - tags
+  only:
+    - tags
   before_script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
   script:

@@ -1,0 +1,17 @@
+stages:
+  - build
+
+build:
+  stage: build
+  image: docker:latest
+  services:
+   - docker:dind
+  tags:
+    - docker
+  only:
+    - tags
+  before_script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
+  script:
+    - docker build --no-cache --pull -t $CI_REGISTRY_IMAGE .
+    - docker push $CI_REGISTRY_IMAGE

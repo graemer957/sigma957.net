@@ -37,3 +37,18 @@ url = "https://gitlab.com/graemer957"
 [[params.social]]
 name = "linkedin"
 url = "https://www.linkedin.com/in/graeme-read-741842a5/"
+
+# Disable all services for GDPR compliance
+[privacy]
+[privacy.disqus]
+disable = true
+[privacy.googleAnalytics]
+disable = true
+[privacy.instagram]
+disable = true
+[privacy.twitter]
+disable = true
+[privacy.vimeo]
+disable = true
+[privacy.youtube]
+disable = true

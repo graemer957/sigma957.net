@@ -7,6 +7,7 @@ rssLimit = 10
 pygmentsCodefences  = true
 pygmentsUseClasses = true
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
+enableRobotsTXT = true
 
 [author]
 name = "Graeme Read"

@@ -12,9 +12,9 @@ enableRobotsTXT = true
 [author]
 name = "Graeme Read"
 
-[taxonomies]
-tag = "tags"
-category = "" # Categories are disabled by default.
+# [taxonomies]
+# tag = "tags"
+# category = "" # Categories are disabled by default.
 
 [params]
 dateform        = "Jan 2, 2006"

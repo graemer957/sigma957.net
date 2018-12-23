@@ -22,6 +22,11 @@ homeSubtitle = "Life is not measured by the number of breaths we take, but by th
 footerCopyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
 justifyContent = false  # Set "text-align: justify" to .content, requires extended version of Hugo
 
+[menu]
+[[menu.main]]
+name = "About"
+url = "/about/"
+
 # Social Icons
 [[params.social]]
 name = "email"

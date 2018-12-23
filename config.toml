@@ -24,8 +24,14 @@ justifyContent = false  # Set "text-align: justify" to .content, requires extend
 
 [menu]
 [[menu.main]]
+name = "Posts"
+url = "/posts/"
+weight = 10
+
+[[menu.main]]
 name = "About"
 url = "/about/"
+weight = 20
 
 # Social Icons
 [[params.social]]

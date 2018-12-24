@@ -1,6 +1,6 @@
 ---
 title: "It Did Not Take Long"
-date: 2018-12-21
+date: 2018-12-21T21:14:00Z
 draft: false
 tags: 
   - hugo

@@ -49,7 +49,7 @@ git clone git@github.com:powerline/fonts.git
 
 Once all this is done, this is what your shell should look like:
 
-![Supercharged Terminal](supercharged-terminal.png)
+![Supercharged Terminal](supercharged-terminal.00098f4453b2b35616830d7f192c7e07d4ca5821ef2cad7108102636a8e51e0d.png)
 
 You can see the time, current working directory and git status in my prompt. Also, notice the git status showing the current branch `master`, tag `v0.3`, the `●` representing changes and lastly the `?` to signify a new file. Pretty cool, huh?
 

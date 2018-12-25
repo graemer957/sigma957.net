@@ -1,12 +1,12 @@
 ---
 title: "Supercharging Your Terminal"
-date: 2018-12-24T20:44:13Z
-draft: true
+date: 2018-12-25T08:58:00Z
+draft: false
 tags: 
   - shell
   - zsh
 ---
-Merry Christmas everyone 🎄🎅🏻
+Merry Christmas everyone 🎅🏻🎄
 
 For today's blog post, I am re-publishing an article I originally wrote for my company blog on 7th May 2017.
 

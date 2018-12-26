@@ -10,7 +10,7 @@ I have been following the incredible things [Cloudflare](https://www.cloudflare.
 I plan to write a series of blog posts about the things I have learnt and also the services I use or plan to use, in the very near future. My thinking is to cover:
 
 * [Hosting DNS / registrar](../cloudflare-dns-hosting-and-registrar)
-* Cloudflare and Terraform
+* [Terraform and Cloudflare](../terraform-and-cloudflare)
 * Protection and Security
 * Acceleration and Argo Tunnel
 * Serverless with Workers

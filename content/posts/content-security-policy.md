@@ -77,3 +77,5 @@ An A+ rating - excellent... This earns us a spot in the 'Hall of Fame', albeit t
 ![Security Headers Hall of Fame](hall-of-fame.02414b59c3f6a5af9f846e931fc59ba8659597394f6c4db2d5ca7b38012cb140.png)
 
 Obviously should the scripts for setting `hasHeader` change this CSP will break. In addition, I am not entirely thrilled by having `unsafe-inline` for `style-src`. Therefore, I will reach out to the author of the theme I am using to find out if there is a better way™
+
+_UPDATE_: I have raised [#22: Content Security Policy](https://github.com/Track3/hermit/issues/22) on GitHub with Track3, the theme author, in case I am missing some Hugo magic.

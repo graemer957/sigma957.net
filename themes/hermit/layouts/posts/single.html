@@ -32,6 +32,12 @@
 				{{- end }}
 			</footer>
 		</article>
+		{{- if .Params.toc }}
+		<aside id="toc">
+			<div class="toc-title">{{ i18n "tableOfContents" }}</div>
+			{{ .TableOfContents }}
+		</aside>
+		{{- end }}
 		<div class="post-nav thin">
 			{{- with .NextInSection }}
 			<a class="next-post" href="{{ .Permalink }}">
@@ -44,15 +50,12 @@
 			</a>
 			{{- end }}
 		</div>
-		{{- if .Site.DisqusShortname }}
-		<div id="disqus" class="thin">
-			{{ template "_internal/disqus.html" . }}
+		<div id="comments" class="thin">
+			{{ partial "comments.html" . }}
 		</div>
-		{{- end }}
 	</main>
 {{ end }}
 
 {{ define "footer" }}
 {{ partialCached "footer.html" . }}
-	<script>let haveHeader = true;</script>
 {{ end }}

@@ -65,12 +65,18 @@ const showContent = () => {
   document.getElementById('bg-img').classList.remove('show-bg-img');
 }
 
-if (haveHeader == true) {
+// Toggle TOC
+//
+const toggleToc = () => {
+  document.getElementById('toc').classList.toggle('show-toc');
+}
+
+if (document.getElementById('site-header') !== null) {
   document.getElementById('menu-btn').addEventListener('click', mobileMenuToggle);
-  
+
   window.addEventListener('scroll', throttle(() => {
     autoHideHeader();
-    
+
     if (mobileMenuVisible == true) {
       mobileMenuToggle();
     }

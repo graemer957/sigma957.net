@@ -1,10 +1,24 @@
+{{ define "head" }}
+	<style>
+	.bg-img {background-image: url('
+	{{- if .Params.featuredImg -}}
+		{{.Params.featuredImg | absURL}}
+	{{- else if .Params.images -}}
+		{{- range first 1 .Params.images -}}
+		{{. | absURL}}
+		{{- end -}}
+	{{- end -}}
+	');}
+	</style>
+{{ end }}
+
 {{ define "header" }}
 {{ partial "header.html" . }}
 {{ end }}
 
 {{ define "main" }}
-	{{- with .Params.featuredImg }}
-	<div id="bg-img" class="bg-img" style="background-image: url({{.}});" onclick="showContent()"></div>
+	{{- if (or .Params.images .Params.featuredImg) }}
+	<div class="bg-img"></div>
 	{{- end }}
 	<main class="site-main section-inner animated fadeIn faster">
 		<article class="thin">
@@ -51,7 +65,7 @@
 			{{- end }}
 		</div>
 		<div id="comments" class="thin">
-			{{ partial "comments.html" . }}
+		{{- partial "comments.html" . -}}
 		</div>
 	</main>
 {{ end }}

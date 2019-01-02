@@ -1,17 +1,3 @@
-{{ define "head" }}
-	<style>
-	.bg-img {background-image: url('
-	{{- if .Site.Params.bgImg -}}
-		{{.Site.Params.bgImg | absURL}}
-	{{- else if .Site.Params.images -}}
-		{{- range first 1 .Site.Params.images -}}
-		{{. | absURL}}
-		{{- end -}}
-	{{- end -}}
-	');}
-	</style>
-{{ end }}
-
 {{ define "main" }}
 	{{- if (or .Site.Params.images .Site.Params.bgImg) }}
 	<div class="bg-img"></div>

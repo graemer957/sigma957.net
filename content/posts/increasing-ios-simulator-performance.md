@@ -1,7 +1,7 @@
 ---
 title: "Improving iOS Simulator Performance"
 date: 2019-01-04T12:03:00Z
-draft: true
+draft: false
 tags: 
   - ios
   - performance

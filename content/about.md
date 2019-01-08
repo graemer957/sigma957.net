@@ -3,7 +3,7 @@ title: "About Me"
 date: 2018-12-21T20:20:00Z
 draft: false
 ---
-I have 22 years of experience working in the IT industry. During that time I have spent time as a:
+I have over 20 years of experience working in the IT industry. During that time I have spent time as a:
 
 * Systems & Storage Manager / Architect - designing, building, maintaining and managing both physical and virtual infrastructure that provided services to over ten thousand NHS users
 * Field Support Engineer - installation and upgrade engineering for virtualised storage and tape library solutions across northern EMEA

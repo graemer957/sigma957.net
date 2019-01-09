@@ -145,7 +145,9 @@ cf-ray: 48fba6ae7eb8a719-DUB
 As you can see, anytime the user hits a URL at https://www.sigma957.net they are redirected using an HTTP 301 (Moved Permanently) to the same URL on https://sigma957.net (_NOTE:_ The `*` wildcard and the `$1` reference). What is fantastic about using a page rule for this is that it happens on the Cloudflare CDN Edge nodes, which for most people will be really close to their location.
 
 ## Other Resources
-The Cloudflare Terraform provider also allows you to configure other DNS records like A, MX or TXT and even other resources like zone settings. I plan to cover the latter in another blog post soon™
+The Cloudflare Terraform provider also allows you to configure other DNS records like A, MX or TXT and even other resources like zone settings. I plan to cover the latter in another blog post soon™.
+
+**UPDATE**: Please see the blog post [Cloudflare protection, security and acceleration](../cloudflare-protection-security-and-acceleration) for more information.
 
 ---
 

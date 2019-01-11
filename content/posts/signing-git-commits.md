@@ -1,6 +1,6 @@
 ---
 title: "Signing Git Commits"
-date: 2019-01-10T16:37:00Z
+date: 2019-01-11T14:44:00Z
 draft: false
 tags:
   - git

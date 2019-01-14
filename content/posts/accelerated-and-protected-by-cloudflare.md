@@ -12,7 +12,7 @@ I plan to write a series of blog posts about the things I have learnt and also t
 * [Hosting DNS / registrar](../cloudflare-dns-hosting-and-registrar)
 * [Terraform and Cloudflare](../terraform-and-cloudflare)
 * [Cloudflare protection, security and acceleration](../cloudflare-protection-security-and-acceleration)
-* Acceleration and Argo Tunnel
+* [Acceleration With Cloudflare Argo](../acceleration-with-argo)
 * Serverless with Workers
 
 Feel free to get in touch if you have other suggestions 👌🏻

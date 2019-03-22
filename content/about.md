@@ -12,8 +12,8 @@ I have over 20 years of experience working in the IT industry. During that time 
 I am completely self-taught.
 
 ## Current Status
-* I work at [Optimised Labs](https://www.optimisedlabs.com), which I co-founded in April 2017, on iOS, DevOps, PaaS and Ruby projects for our amazing clients
-* I am based in Plymouth, UK
+* On the lookout for my next exciting iOS contract, so get in touch if you have some!
+* I am based in Farnham, UK
 
 ## Technologies / Languages
 A brief, consolidated, list of the technologies and languages I have experience with:

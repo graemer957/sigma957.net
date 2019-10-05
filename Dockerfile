@@ -6,7 +6,7 @@ COPY . .
 RUN hugo
 
 # Use nginx for serving
-FROM nginx:1.14.2-alpine
+FROM nginx:1.16.1-alpine
 LABEL maintainer="Graeme Read <graeme@sigma957.net>"
 LABEL description="Website for sigma957.net"
 

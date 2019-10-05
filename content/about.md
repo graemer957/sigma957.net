@@ -12,7 +12,7 @@ I have over 20 years of experience working in the IT industry. During that time 
 I am completely self-taught.
 
 ## Current Status
-* On the lookout for my next exciting iOS contract, so get in touch if you have some!
+* Working on the next generation of native apps for the fans of [WWE](https://watch.wwe.com/)
 * I am based in Farnham, UK
 
 ## Technologies / Languages
@@ -35,4 +35,4 @@ I have always had an enthusiasm for learning and pushing myself further. As such
 
 * Serverless Computing with [Cloudflare Workers](https://www.cloudflare.com/en-gb/products/cloudflare-workers/)
 * [Go](https://golang.org/) & [Rust](https://www.rust-lang.org/) - interested in their performance, concurrency, safety and cross-compilation (READ: WebAssembly)
-* My fastest half-marathon and longest ultramarathon
+* My first Ironman

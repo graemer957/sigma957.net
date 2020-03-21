@@ -1,5 +1,5 @@
 # Build website using Hugo
-FROM registry.gitlab.com/graemer957/hugo AS builder
+FROM registry.gitlab.com/graemer957/hugo:v0.67.0 AS builder
 
 WORKDIR /site
 COPY . .

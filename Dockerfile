@@ -3,6 +3,7 @@ FROM registry.gitlab.com/graemer957/hugo AS builder
 
 WORKDIR /site
 COPY . .
+RUN hugo version
 RUN hugo
 
 # Use nginx for serving

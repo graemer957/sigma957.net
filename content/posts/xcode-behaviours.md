@@ -32,6 +32,7 @@ With that in mind, by the end of this article, you will have a separate tab name
 ## Process
 1. Launch Xcode
 2. Open _Preferences_ by navigating to `Xcode → Preferences` or hitting `Cmd + ,`
+3. Navigate to the `Behaviors` section
 
 ### Console
 On the left-hand side choose `Running → Starts` and:

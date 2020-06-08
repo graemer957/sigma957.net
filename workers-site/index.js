@@ -24,6 +24,32 @@ addEventListener('fetch', event => {
   }
 })
 
+// See:
+// - https://scotthelme.co.uk/security-headers-cloudflare-worker/
+// - https://developer.mozilla.org/en-US/docs/Web/API/Response/headers
+// - https://developers.cloudflare.com/workers/reference/apis/response/
+let securityHeaders = {
+  "X-Frame-Options": "SAMEORIGIN",
+  "X-Xss-Protection": "1; mode=block",
+  "Referrer-Policy": "strict-origin-when-cross-origin",
+  "Feature-Policy": "accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'",
+  "Content-Security-Policy": "default-src 'self'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; report-uri https://sigma957.report-uri.com/r/d/csp/reportOnly"
+}
+
+async function addHeaders(response) {
+  let headers = new Headers(response.headers)
+
+  Object.keys(securityHeaders).forEach(name => {
+    headers.set(name, securityHeaders[name])
+  })
+
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers: headers
+  })
+}
+
 async function handleEvent(event) {
   const url = new URL(event.request.url)
   let options = {}
@@ -41,7 +67,11 @@ async function handleEvent(event) {
         bypassCache: true,
       }
     }
-    return await getAssetFromKV(event, options)
+    // return await getAssetFromKV(event, options)
+
+    // Add security headers as recommended by securityheaders.io
+    let response = await getAssetFromKV(event, options)
+    return addHeaders(response)
   } catch (e) {
     // if an error is thrown try to serve the asset at 404.html
     if (!DEBUG) {

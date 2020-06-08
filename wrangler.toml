@@ -1,0 +1,10 @@
+type = "webpack"
+workers_dev = false
+
+[site]
+bucket = "./public"
+entry-point = "workers-site"
+
+[env.team957]
+name = "team957"
+route = "team957.co.uk/*"

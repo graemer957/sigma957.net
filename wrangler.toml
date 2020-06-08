@@ -5,6 +5,10 @@ workers_dev = false
 bucket = "./public"
 entry-point = "workers-site"
 
+[env.sigma957]
+name = "sigma957"
+route = "sigma957.net/*"
+
 [env.team957]
 name = "team957"
 route = "team957.co.uk/*"

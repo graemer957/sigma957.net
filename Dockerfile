@@ -1,23 +1,26 @@
 # Build website using Hugo
 FROM registry.gitlab.com/graemer957/hugo AS builder
 
+ARG DOMAIN
+
 WORKDIR /site
 COPY . .
 RUN hugo version
-RUN hugo
+RUN hugo -b $DOMAIN
 
-# Use nginx for serving
-FROM nginx:1.18.0-alpine
-LABEL maintainer="Graeme Read <graeme@sigma957.net>"
-LABEL description="Website for sigma957.net"
+# Deploy to Cloudflare Worker using wrangler
+FROM registry.gitlab.com/graemer957/wrangler
 
-RUN apk add --update \
-    bash \
-    build-base \
-    && rm -rf /var/cache/apk/*
+ARG CF_ACCOUNT_ID
+ARG CF_API_TOKEN
+ARG CF_ZONE_ID
+ARG SITE
 
-# Website content
-COPY --from=builder /site/public/ /usr/share/nginx/html/
+WORKDIR /site
+COPY --from=builder "site/workers-site" "workers-site/"
+COPY --from=builder "site/wrangler.toml" "."
 
-# nginx configuration
-COPY nginx.conf /etc/nginx/nginx.conf
+# Website content from hugo
+COPY --from=builder "site/public" "public/"
+
+RUN wrangler publish -e $SITE

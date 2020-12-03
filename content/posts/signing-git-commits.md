@@ -1,5 +1,5 @@
 ---
-title: "Signing Git Commits"
+title: "Signing Git Commits [Updated 03/12/2020]"
 date: 2019-01-11T14:44:00Z
 draft: false
 tags:
@@ -99,6 +99,9 @@ The process is extremely similar to GitLab's:
 That's it! Next time you make a commit to a git project `gpg` will sign the commit using the specified key. After you push the changes to GitLab or GitHub you should see the 'Verified' badge.
 
 Feel free to get in contact if you have any questions.
+
+## Update 03/12/2020
+Check out the excellent article [Using different Git config for personal and work projects](https://blog.kulman.sk/different-git-config-for-work-projects/) on how to configure different signing setups based on path.
 
 ---
 

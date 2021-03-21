@@ -34,7 +34,7 @@ let header = document.getElementById('site-header');
 let lastScrollPosition = window.pageYOffset;
 
 const autoHideHeader = () => {
-  let currentScrollPosition = window.pageYOffset;
+  let currentScrollPosition = Math.max(window.pageYOffset, 0);
   if (currentScrollPosition > lastScrollPosition) {
     header.classList.remove('slideInUp');
     header.classList.add('slideOutDown');
@@ -85,6 +85,12 @@ if (header !== null) {
   listen('#toc-btn', "click", toggleToc);
   listen('#img-btn', "click", showImg);
   listen('.bg-img', "click", hideImg);
+
+  document.querySelectorAll('.post-year').forEach((ele)=> {
+    ele.addEventListener('click', () => {
+      window.location.hash = '#' + ele.id;
+    });
+  });
 
   window.addEventListener('scroll', throttle(() => {
     autoHideHeader();

@@ -33,7 +33,7 @@ let securityHeaders = {
   "X-Xss-Protection": "1; mode=block",
   "Referrer-Policy": "strict-origin-when-cross-origin",
   "Feature-Policy": "accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'",
-  "Content-Security-Policy": "default-src 'self'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; report-uri https://sigma957.report-uri.com/r/d/csp/reportOnly"
+  "Content-Security-Policy": "default-src 'self' https://cloudflareinsights.com/cdn-cgi/rum; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; report-uri https://sigma957.report-uri.com/r/d/csp/reportOnly"
 }
 
 async function addHeaders(response) {

@@ -3,6 +3,8 @@ title: "Migration from Things"
 date: 2021-09-19T00:00:00Z
 ---
 
+**UPDATE 2nd Jan 2022**: Having self-limited myself to a single task a day, the full migration to Todoist is finally complete 🎉
+
 I have been using [Things by Cultured Code](https://culturedcode.com/things/) since its launch. I do not even recall how long ago that was. From memory, they launched first on iOS and brought their product to macOS later. Going to guess around 2012.
 
 Before then, I likely did not use any form of todo management. I think I used to write stuff down into a text document, with each new line being a discrete task and prefixing each line with a 'status'. For example:

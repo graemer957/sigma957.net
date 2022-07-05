@@ -12,7 +12,7 @@ Over 24 years of experience in the IT industry, covering a broad range of roles:
 I am completely self-taught.
 
 ## Current Status
-* Working on the next generation of native apps for the fans of [WWE](https://wwe.com/)
+* Actively looking for my next project - feel free to get in touch if you think I can help
 * I am based in Farnham, UK
 
 ## Technologies / Languages

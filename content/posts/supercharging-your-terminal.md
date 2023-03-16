@@ -1,5 +1,5 @@
 ---
-title: "Supercharging Your Terminal"
+title: "Supercharging Your Terminal [Updated 16/03/2023]"
 date: 2018-12-25T08:58:00Z
 draft: false
 tags: 
@@ -18,7 +18,12 @@ Inspired by a [blog post](https://medium.com/salesforce-ux/iterm2-with-zsh-shell
 
 - Install the excellent [iTerm2](http://www.iterm2.com) which brings some nifty features.
 
-- Setup `zsh` as default shell. Snipped from the [setup instructions](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH):
+- On newer versions of macOS, simply update the version of `zsh` by:
+```bash
+brew install zsh zsh-completions
+```
+
+- On older versions of macOS (before Catalina I believe), setup `zsh` as default shell. Snipped from the [setup instructions](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH):
 ```bash
 brew install zsh zsh-completions
 echo "/usr/local/bin/zsh" >> /etc/shells
@@ -58,3 +63,5 @@ You can see the time, current working directory and git status in my prompt. Als
 _Update_: Found this interesting counter [article](https://joshtronic.com/2017/02/12/you-may-not-need-oh-my-zsh/) since posting
 
 _Update 2_: Installing the [Shell Integration](http://iterm2.com/documentation-shell-integration.html) enables extremely handy shortcuts like Cmd+Shift+A to select previous commands output and _Auto Command Completion_
+
+_Update 3_: `zsh` is now the default shell in macOS, so clarified that switching shells only relates to the older versions

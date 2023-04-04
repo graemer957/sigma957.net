@@ -1,0 +1,89 @@
+> ssh vir-d -v
+
+OpenSSH_7.9p1, LibreSSL 2.7.3
+debug1: Reading configuration data /Users/graemer/.ssh/config
+debug1: /Users/graemer/.ssh/config line 2: Applying options for *
+debug1: /Users/graemer/.ssh/config line 75: Applying options for vir-d
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 48: Applying options for *
+debug1: Connecting to vir-d.sigma957.net port 22.
+debug1: Connection established.
+debug1: identity file /Users/graemer/.ssh/azure type 0
+debug1: identity file /Users/graemer/.ssh/azure-cert type -1
+debug1: Local version string SSH-2.0-OpenSSH_7.9
+debug1: Remote protocol version 2.0, remote software version OpenSSH_7.6p1 Ubuntu-4ubuntu0.3
+debug1: match: OpenSSH_7.6p1 Ubuntu-4ubuntu0.3 pat OpenSSH_7.0*,OpenSSH_7.1*,OpenSSH_7.2*,OpenSSH_7.3*,OpenSSH_7.4*,OpenSSH_7.5*,OpenSSH_7.6*,OpenSSH_7.7* compat 0x04000002
+debug1: Authenticating to vir-d.sigma957.net:22 as 'graemer'
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug1: kex: algorithm: curve25519-sha256
+debug1: kex: host key algorithm: ecdsa-sha2-nistp256
+debug1: kex: server->client cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
+debug1: kex: client->server cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: Server host key: ecdsa-sha2-nistp256 SHA256:jhHQFFYm+jtkr7jRbsSYctVVspO8119N4FnFSFtoqE0
+debug1: found 1 insecure fingerprints in DNS
+debug1: matching host key fingerprint found in DNS
+No ECDSA host key is known for vir-d.sigma957.net and you have requested strict checking.
+Host key verification failed.
+
+---
+
+dig @127.0.0.1 vir-d.sigma957.net sshfp +dnssec +multi
+
+; <<>> DiG 9.10.6 <<>> @127.0.0.1 vir-d.sigma957.net sshfp +dnssec +multi
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 54744
+;; flags: qr rd ra ad; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 4096
+;; QUESTION SECTION:
+;vir-d.sigma957.net.	IN SSHFP
+
+;; ANSWER SECTION:
+vir-d.sigma957.net.	249 IN SSHFP 3 2 (
+				8E11D0145626FA3B64AFB8D16EC49872D555B293BCD7
+				5F4DE059C5485B68A84D )
+vir-d.sigma957.net.	249 IN RRSIG SSHFP 13 3 300 (
+				20200331175817 20200329155817 34505 sigma957.net.
+				F5KhTBOkaLvzfJ6nkhcx0WHgRIdIHeR3dhY0zC/mrOBf
+				wTaNSal/CmnK5TCulfdRVbf6MNRhl6JgfRQZUdDneQ== )
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#53(127.0.0.1)
+;; WHEN: Mon Mar 30 17:59:09 BST 2020
+;; MSG SIZE  rcvd: 237
+
+'ad' in response!
+
+---
+
++LogLevel debug1 to SSH config
+
+---
+
+Installed newer version of OpenSSH via homebrew: `brew install openssh`
+
+OpenSSH_7.9p1, LibreSSL 2.7.3 > OpenSSH_8.2p1, OpenSSL 1.1.1d  10 Sep 2019
+
+---
+
+https://weberblog.net/sshfp-authenticate-ssh-fingerprints-via-dnssec/
+https://apple.stackexchange.com/questions/375566/ssh-verifyhostkeydns-not-working
+https://linux-audit.com/granting-temporary-access-to-servers-using-signed-ssh-keys/
+
+---
+
+No ECDSA host key is known for vir-d.sigma957.net and you have requested strict checking.
+Host key verification failed.
+
+ssh -V
+> OpenSSH_7.9p1, LibreSSL 2.7.3
+
+---
+
+OpenSSH_8.2p1, OpenSSL 1.1.1d  10 Sep 2019 in new terminal window was fine!!
+

@@ -4,7 +4,6 @@ date: 2018-12-21T21:14:00Z
 draft: false
 tags: 
   - hugo
-  - hermit
   - cloudflare
 ---
 I have owned and operated this domain for over 17 years... and it has only just got a website. Not that long, right? 😉

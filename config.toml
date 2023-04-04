@@ -1,69 +1,53 @@
 languageCode = "en-gb"
 defaultContentLanguage = "en"
 title = "Graeme Read"
-theme = "hermit"
+theme = "m10c"
+paginate = 8
 rssLimit = 10
-pygmentsCodefences  = true
-pygmentsUseClasses = true
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
 enableRobotsTXT = true
 
-[author]
-name = "Graeme Read"
-
-# [taxonomies]
-# tag = "tags"
-# category = "" # Categories are disabled by default.
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 2
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 3
 
 [params]
-dateform        = "Jan 2, 2006"
-dateformShort   = "Jan 2"
-dateformNum     = "2006-01-02"
-dateformNumTime = "2006-01-02 15:04 -0000"
+  author = "Graeme Read"
+  description = "Life is not measured by the number of breaths we take, but by the moments that take our breath away."
+  menu_item_separator = " - "
+  [[params.social]]
+    icon = "mail"
+    name = "email"
+    url = "mailto:graeme@sigma957.net"
+  [[params.social]]
+    icon = "github"
+    name = "github"
+    url = "https://github.com/graemer957"
+  [[params.social]]
+    icon = "gitlab"
+    name = "gitlab"
+    url = "https://gitlab.com/graemer957"
+  [[params.social]]
+    icon = "linkedin"
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/graemer957"
 
-homeSubtitle = "Life is not measured by the number of breaths we take, but by the moments that take our breath away."
-footerCopyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
-justifyContent = false  # Set "text-align: justify" to .content, requires extended version of Hugo
-
-[menu]
-[[menu.main]]
-name = "Posts"
-url = "/posts/"
-weight = 10
-
-[[menu.main]]
-name = "About Me"
-url = "/about/"
-weight = 20
-
-# Social Icons
-[[params.social]]
-name = "email"
-url = "mailto:graeme@sigma957.net"
-
-[[params.social]]
-name = "github"
-url = "https://github.com/graemer957"
-
-[[params.social]]
-name = "gitlab"
-url = "https://gitlab.com/graemer957"
-
-[[params.social]]
-name = "linkedin"
-url = "https://www.linkedin.com/in/graemer957"
-
-# Disable all services for GDPR compliance
-[privacy]
-[privacy.disqus]
-disable = true
-[privacy.googleAnalytics]
-disable = true
-[privacy.instagram]
-disable = true
-[privacy.twitter]
-disable = true
-[privacy.vimeo]
-disable = true
-[privacy.youtube]
-disable = true
+  [params.style]
+   darkestColor = "#242930"
+   darkColor = "#353b43"
+   lightColor = "#afbac4"
+   lightestColor = "#ffffff"
+   primaryColor = "#a8d1f6"

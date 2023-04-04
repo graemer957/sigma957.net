@@ -8,7 +8,7 @@ tags:
   - hugo
 ---
 
-I've been using the [hermit](https://github.com/Track3/hermit) theme for Hugo since creating this blog in 2018. Since then the number of updates to that theme have dwindled, so in the last few weeks I've been trying out some other minimilistic themes. Selecting [m10c](https://github.com/vaga/hugo-theme-m10c) as best suited for me.
+I've been using the [hermit](https://github.com/Track3/hermit) theme for Hugo since creating this blog in 2018. Since then the number of updates to that theme has dwindled, so in the last few weeks, I've been trying out some other minimalistic themes. Selecting [m10c](https://github.com/vaga/hugo-theme-m10c) as best suited for me.
 
 This post covers the process to switch from one theme to the other.
 
@@ -21,7 +21,7 @@ git submodule add https://github.com/vaga/hugo-theme-m10c.git themes/m10c
 
 3. Delete the old theme under `themes/hermit`. This was not added as a git submodule at the time.
 
-4. Update the `config.toml` with correct parameters for the new theme. Check out the `README.md` and `exampleSite` for details.
+4. Update the `config.toml` with the correct parameters for the new theme. Check out the `README.md` and `exampleSite` for details.
 
 5. Added avatar image for the new theme.
 

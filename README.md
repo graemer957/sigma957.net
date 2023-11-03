@@ -1,13 +1,13 @@
 # sigma957.net
 
-Personal website built using [Hugo](https://gohugo.io) with the [Hermit](https://themes.gohugo.io/hermit/) theme.
+Personal website built using [Hugo](https://gohugo.io) with the [m10c](https://github.com/vaga/hugo-theme-m10c) theme.
 
 ## Initial Setup
 1. `hugo new site sigma957.net`
 2. `git init`
 3. Use fork to commit
 4. Create project on GitLab and push
-5. Switch theme to `Hermit` with `git clone https://github.com/Track3/hermit.git themes/hermit` and then add `theme = "hermit"` to `config.toml`.
+5. Switch theme to `m10c` with `git clone https://github.com/vaga/hugo-theme-m10c themes/m10c` and then add `theme = "m10c"` to `config.toml`.
 
 ## Creating favicons
 Picked the infinity symbol from [icons8](https://icons8.com/icon/set/royalty-free-infinity/color) with the following custom colours:

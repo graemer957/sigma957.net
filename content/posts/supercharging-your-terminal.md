@@ -71,3 +71,5 @@ _Update 2_: Installing the [Shell Integration](http://iterm2.com/documentation-s
 _Update 3_: `zsh` is now the default shell in macOS, so clarified that switching shells only relates to the older versions
 
 _Update 4_: Clarify font settings in iTerm2
+
+_Update 5_: Update ZSH theme to [Powerlevel10k](../updating-to-powerlevel10k)

@@ -1,5 +1,5 @@
 ---
-title: "Supercharging Your Terminal [Updated 16/03/2023]"
+title: "Supercharging Your Terminal [Updated 25/11/2023]"
 date: 2018-12-25T08:58:00Z
 draft: false
 tags: 
@@ -14,7 +14,7 @@ For today's blog post, I am re-publishing an article I originally wrote for my c
 
 In all likelihood, since I started using a Mac, I have been using the stock Terminal with the **Pro** theme. This has mostly suited me well, but there are a handful of things I always thought could be improved.
 
-Inspired by a [blog post](https://medium.com/salesforce-ux/iterm2-with-zsh-shell-5944ee0502ac) and colleague at work who recently showed me their shell, reignited my interested in updating my setup. This article is the result of the steps I used to set up my terminal.
+Inspired by a [blog post](https://medium.com/salesforce-ux/iterm2-with-zsh-shell-5944ee0502ac) and a colleague at work who recently showed me their shell, reignited my interest in updating my setup. This article is the result of the steps I used to set up my terminal.
 
 - Install the excellent [iTerm2](http://www.iterm2.com) which brings some nifty features.
 
@@ -23,7 +23,7 @@ Inspired by a [blog post](https://medium.com/salesforce-ux/iterm2-with-zsh-shell
 brew install zsh zsh-completions
 ```
 
-- On older versions of macOS (before Catalina I believe), setup `zsh` as default shell. Snipped from the [setup instructions](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH):
+- On older versions of macOS (before Catalina I believe), set up `zsh` as the default shell. Snipped from the [setup instructions](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH):
 ```bash
 brew install zsh zsh-completions
 echo "/usr/local/bin/zsh" >> /etc/shells
@@ -41,10 +41,14 @@ git clone git@github.com:powerline/fonts.git
 ./install.sh
 ```
 
-- Change font used in iTerm2 to **Roboto Mono Light for Powerline**
+- Change font used in iTerm2:
+  1. Navigate to `Profiles`
+  2. Then `Text`
+  3. Choose `Roboto Mono Light for Powerline`
+  4. Bump the default font size to `14`
 
 - Edited my `~/.zsh` file:
-  - Change `ZSH_THEME` from 'robbyrussell' to '[agnoster](https://github.com/agnoster/agnoster-zsh-theme)'
+  - Change `ZSH_THEME` from the default to '[powerlevel10k/powerlevel10k](https://github.com/romkatv/powerlevel10k)'
  - Add `DEFAULT_USER="<your username>"` to stop seeing **user@host**
  - Update the plugins so `plugins=(git git-flow git-extras web-search)`
 
@@ -65,3 +69,5 @@ _Update_: Found this interesting counter [article](https://joshtronic.com/2017/0
 _Update 2_: Installing the [Shell Integration](http://iterm2.com/documentation-shell-integration.html) enables extremely handy shortcuts like Cmd+Shift+A to select previous commands output and _Auto Command Completion_
 
 _Update 3_: `zsh` is now the default shell in macOS, so clarified that switching shells only relates to the older versions
+
+_Update 4_: Clarify font settings in iTerm2

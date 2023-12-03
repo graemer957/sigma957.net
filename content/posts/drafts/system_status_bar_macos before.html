@@ -1,0 +1,2373 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Cargo Build Timings — system_status_bar_macos 0.2.0</title>
+  <meta charset="utf-8">
+<style type="text/css">
+html {
+  font-family: sans-serif;
+}
+
+.canvas-container {
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+h1 {
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.graph {
+  display: block;
+}
+
+.my-table {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.my-table th {
+  color: #d5dde5;
+  background: #1b1e24;
+  border-bottom: 4px solid #9ea7af;
+  border-right: 1px solid #343a45;
+  font-size: 18px;
+  font-weight: 100;
+  padding: 12px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.my-table th:first-child {
+  border-top-left-radius: 3px;
+}
+
+.my-table th:last-child {
+  border-top-right-radius: 3px;
+  border-right:none;
+}
+
+.my-table tr {
+  border-top: 1px solid #c1c3d1;
+  border-bottom: 1px solid #c1c3d1;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.my-table tr:first-child {
+  border-top:none;
+}
+
+.my-table tr:last-child {
+  border-bottom:none;
+}
+
+.my-table tr:nth-child(odd) td {
+  background: #ebebeb;
+}
+
+.my-table tr:last-child td:first-child {
+  border-bottom-left-radius:3px;
+}
+
+.my-table tr:last-child td:last-child {
+  border-bottom-right-radius:3px;
+}
+
+.my-table td {
+  background: #ffffff;
+  padding: 10px;
+  text-align: left;
+  vertical-align: middle;
+  font-weight: 300;
+  font-size: 14px;
+  border-right: 1px solid #C1C3D1;
+}
+
+.my-table td:last-child {
+  border-right: 0px;
+}
+
+.summary-table td:first-child {
+  vertical-align: top;
+  text-align: right;
+}
+
+.input-table td {
+  text-align: center;
+}
+
+.error-text {
+  color: #e80000;
+}
+
+</style>
+</head>
+<body data-new-gr-c-s-check-loaded="8.909.0" data-gr-ext-installed="">
+
+<h1>Cargo Build Timings</h1>
+See <a href="https://doc.rust-lang.org/nightly/cargo/reference/timings.html">Documentation</a>
+
+<table class="my-table summary-table">
+  <tbody><tr>
+    <td>Targets:</td><td>system_status_bar_macos 0.2.0 (lib)</td>
+  </tr>
+  <tr>
+    <td>Profile:</td><td>release</td>
+  </tr>
+  <tr>
+    <td>Fresh units:</td><td>0</td>
+  </tr>
+  <tr>
+    <td>Dirty units:</td><td>11</td>
+  </tr>
+  <tr>
+    <td>Total units:</td><td>11</td>
+  </tr>
+  <tr>
+    <td>Max concurrency:</td><td>3 (jobs=8 ncpu=8)</td>
+  </tr>
+  <tr>
+    <td>Build start:</td><td>2023-12-03T07:48:50Z</td>
+  </tr>
+  <tr>
+    <td>Total time:</td><td>50.6s</td>
+  </tr>
+  <tr>
+    <td>rustc:</td><td>rustc 1.74.0 (79e9716c9 2023-11-13)<br>Host: x86_64-apple-darwin<br>Target: x86_64-apple-darwin</td>
+  </tr>
+
+</tbody></table>
+
+<table class="input-table">
+  <tbody><tr>
+    <td><label for="min-unit-time">Min unit time:</label></td>
+    <td><label for="scale">Scale:</label></td>
+  </tr>
+  <tr>
+    <td><input type="range" min="0" max="30" step="0.1" value="0" id="min-unit-time"></td>
+    <td><input type="range" min="1" max="50" value="20" id="scale"></td>
+  </tr>
+  <tr>
+    <td><output for="min-unit-time" id="min-unit-time-output">0s</output></td>
+    <td><output for="scale" id="scale-output">20</output></td>
+  </tr>
+</tbody></table>
+
+<div id="pipeline-container" class="canvas-container" style="width: 1100px; height: 337px;">
+ <canvas id="pipeline-graph" class="graph" style="position: absolute; left: 0px; top: 0px; z-index: 0; width: 1100px; height: 337px;" width="1100" height="337"></canvas>
+ <canvas id="pipeline-graph-lines" style="position: absolute; left: 0px; top: 0px; z-index: 1; pointer-events: none; width: 1100px; height: 337px;" width="1100" height="337"></canvas>
+</div>
+<div class="canvas-container">
+  <canvas id="timing-graph" class="graph" width="1100" height="400" style="width: 1100px; height: 400px;"></canvas>
+</div>
+
+<table class="my-table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Unit</th>
+      <th>Total</th>
+      <th>Codegen</th>
+      <th>Features</th>
+    </tr>
+  </thead>
+  <tbody>
+
+<tr>
+  <td>1.</td>
+  <td>icrate v0.0.4</td>
+  <td>48.0s</td>
+  <td>11.6s (24%)</td>
+  <td>AppKit, AppKit_NSATSTypesetter, 
+AppKit_NSAccessibilityCustomAction, AppKit_NSAccessibilityCustomRotor, 
+AppKit_NSAccessibilityCustomRotorItemResult, 
+AppKit_NSAccessibilityCustomRotorSearchParameters, 
+AppKit_NSAccessibilityElement, AppKit_NSActionCell, AppKit_NSAlert, 
+AppKit_NSAlignmentFeedbackFilter, AppKit_NSAnimation, 
+AppKit_NSAnimationContext, AppKit_NSAppearance, AppKit_NSApplication, 
+AppKit_NSArrayController, AppKit_NSBezierPath, 
+AppKit_NSBindingSelectionMarker, AppKit_NSBitmapImageRep, AppKit_NSBox, 
+AppKit_NSBrowser, AppKit_NSBrowserCell, AppKit_NSButton, 
+AppKit_NSButtonCell, AppKit_NSButtonTouchBarItem, 
+AppKit_NSCachedImageRep, AppKit_NSCandidateListTouchBarItem, 
+AppKit_NSCell, AppKit_NSClickGestureRecognizer, AppKit_NSClipView, 
+AppKit_NSCollectionLayoutAnchor, 
+AppKit_NSCollectionLayoutBoundarySupplementaryItem, 
+AppKit_NSCollectionLayoutDecorationItem, 
+AppKit_NSCollectionLayoutDimension, 
+AppKit_NSCollectionLayoutEdgeSpacing, AppKit_NSCollectionLayoutGroup, 
+AppKit_NSCollectionLayoutGroupCustomItem, AppKit_NSCollectionLayoutItem,
+ AppKit_NSCollectionLayoutSection, AppKit_NSCollectionLayoutSize, 
+AppKit_NSCollectionLayoutSpacing, 
+AppKit_NSCollectionLayoutSupplementaryItem, AppKit_NSCollectionView, 
+AppKit_NSCollectionViewCompositionalLayout, 
+AppKit_NSCollectionViewCompositionalLayoutConfiguration, 
+AppKit_NSCollectionViewDiffableDataSource, 
+AppKit_NSCollectionViewFlowLayout, 
+AppKit_NSCollectionViewFlowLayoutInvalidationContext, 
+AppKit_NSCollectionViewGridLayout, AppKit_NSCollectionViewItem, 
+AppKit_NSCollectionViewLayout, AppKit_NSCollectionViewLayoutAttributes, 
+AppKit_NSCollectionViewLayoutInvalidationContext, 
+AppKit_NSCollectionViewTransitionLayout, 
+AppKit_NSCollectionViewUpdateItem, AppKit_NSColor, AppKit_NSColorList, 
+AppKit_NSColorPanel, AppKit_NSColorPicker, 
+AppKit_NSColorPickerTouchBarItem, AppKit_NSColorSampler, 
+AppKit_NSColorSpace, AppKit_NSColorWell, AppKit_NSComboBox, 
+AppKit_NSComboBoxCell, AppKit_NSComboButton, AppKit_NSControl, 
+AppKit_NSController, AppKit_NSCursor, AppKit_NSCustomImageRep, 
+AppKit_NSCustomTouchBarItem, AppKit_NSDataAsset, AppKit_NSDatePicker, 
+AppKit_NSDatePickerCell, AppKit_NSDictionaryController, 
+AppKit_NSDictionaryControllerKeyValuePair, 
+AppKit_NSDiffableDataSourceSnapshot, AppKit_NSDockTile, 
+AppKit_NSDocument, AppKit_NSDocumentController, 
+AppKit_NSDraggingImageComponent, AppKit_NSDraggingItem, 
+AppKit_NSDraggingSession, AppKit_NSDrawer, AppKit_NSEPSImageRep, 
+AppKit_NSEvent, AppKit_NSFilePromiseProvider, 
+AppKit_NSFilePromiseReceiver, AppKit_NSFont, AppKit_NSFontAssetRequest, 
+AppKit_NSFontCollection, AppKit_NSFontDescriptor, AppKit_NSFontManager, 
+AppKit_NSFontPanel, AppKit_NSForm, AppKit_NSFormCell, 
+AppKit_NSGestureRecognizer, AppKit_NSGlyphGenerator, AppKit_NSGlyphInfo,
+ AppKit_NSGradient, AppKit_NSGraphicsContext, AppKit_NSGridCell, 
+AppKit_NSGridColumn, AppKit_NSGridRow, AppKit_NSGridView, 
+AppKit_NSGroupTouchBarItem, AppKit_NSHapticFeedbackManager, 
+AppKit_NSHelpManager, AppKit_NSImage, AppKit_NSImageCell, 
+AppKit_NSImageRep, AppKit_NSImageSymbolConfiguration, 
+AppKit_NSImageView, AppKit_NSInputManager, AppKit_NSInputServer, 
+AppKit_NSLayoutAnchor, AppKit_NSLayoutConstraint, 
+AppKit_NSLayoutDimension, AppKit_NSLayoutGuide, AppKit_NSLayoutManager, 
+AppKit_NSLayoutXAxisAnchor, AppKit_NSLayoutYAxisAnchor, 
+AppKit_NSLevelIndicator, AppKit_NSLevelIndicatorCell, 
+AppKit_NSMagnificationGestureRecognizer, AppKit_NSMatrix, 
+AppKit_NSMediaLibraryBrowserController, AppKit_NSMenu, 
+AppKit_NSMenuItem, AppKit_NSMenuItemCell, AppKit_NSMenuToolbarItem, 
+AppKit_NSMovie, AppKit_NSMutableFontCollection, 
+AppKit_NSMutableParagraphStyle, AppKit_NSNib, AppKit_NSObjectController,
+ AppKit_NSOpenPanel, AppKit_NSOutlineView, AppKit_NSPDFImageRep, 
+AppKit_NSPDFInfo, AppKit_NSPDFPanel, AppKit_NSPICTImageRep, 
+AppKit_NSPageController, AppKit_NSPageLayout, 
+AppKit_NSPanGestureRecognizer, AppKit_NSPanel, AppKit_NSParagraphStyle, 
+AppKit_NSPasteboard, AppKit_NSPasteboardItem, AppKit_NSPathCell, 
+AppKit_NSPathComponentCell, AppKit_NSPathControl, 
+AppKit_NSPathControlItem, AppKit_NSPersistentDocument, 
+AppKit_NSPickerTouchBarItem, AppKit_NSPopUpButton, 
+AppKit_NSPopUpButtonCell, AppKit_NSPopover, 
+AppKit_NSPopoverTouchBarItem, AppKit_NSPredicateEditor, 
+AppKit_NSPredicateEditorRowTemplate, AppKit_NSPressGestureRecognizer, 
+AppKit_NSPressureConfiguration, 
+AppKit_NSPreviewRepresentingActivityItem, AppKit_NSPrintInfo, 
+AppKit_NSPrintOperation, AppKit_NSPrintPanel, AppKit_NSPrinter, 
+AppKit_NSProgressIndicator, AppKit_NSResponder, 
+AppKit_NSRotationGestureRecognizer, AppKit_NSRuleEditor, 
+AppKit_NSRulerMarker, AppKit_NSRulerView, AppKit_NSRunningApplication, 
+AppKit_NSSavePanel, AppKit_NSScreen, AppKit_NSScrollView, 
+AppKit_NSScroller, AppKit_NSScrubber, AppKit_NSScrubberArrangedView, 
+AppKit_NSScrubberFlowLayout, AppKit_NSScrubberImageItemView, 
+AppKit_NSScrubberItemView, AppKit_NSScrubberLayout, 
+AppKit_NSScrubberLayoutAttributes, AppKit_NSScrubberProportionalLayout, 
+AppKit_NSScrubberSelectionStyle, AppKit_NSScrubberSelectionView, 
+AppKit_NSScrubberTextItemView, AppKit_NSSearchField, 
+AppKit_NSSearchFieldCell, AppKit_NSSearchToolbarItem, 
+AppKit_NSSecureTextField, AppKit_NSSecureTextFieldCell, 
+AppKit_NSSegmentedCell, AppKit_NSSegmentedControl, AppKit_NSShadow, 
+AppKit_NSSharingService, AppKit_NSSharingServicePicker, 
+AppKit_NSSharingServicePickerToolbarItem, 
+AppKit_NSSharingServicePickerTouchBarItem, AppKit_NSSlider, 
+AppKit_NSSliderAccessory, AppKit_NSSliderAccessoryBehavior, 
+AppKit_NSSliderCell, AppKit_NSSliderTouchBarItem, AppKit_NSSound, 
+AppKit_NSSpeechRecognizer, AppKit_NSSpeechSynthesizer, 
+AppKit_NSSpellChecker, AppKit_NSSplitView, AppKit_NSSplitViewController,
+ AppKit_NSSplitViewItem, AppKit_NSStackView, AppKit_NSStatusBar, 
+AppKit_NSStatusBarButton, AppKit_NSStatusItem, AppKit_NSStepper, 
+AppKit_NSStepperCell, AppKit_NSStepperTouchBarItem, AppKit_NSStoryboard,
+ AppKit_NSStoryboardSegue, AppKit_NSStringDrawingContext, 
+AppKit_NSSwitch, AppKit_NSTabView, AppKit_NSTabViewController, 
+AppKit_NSTabViewItem, AppKit_NSTableCellView, AppKit_NSTableColumn, 
+AppKit_NSTableHeaderCell, AppKit_NSTableHeaderView, 
+AppKit_NSTableRowView, AppKit_NSTableView, 
+AppKit_NSTableViewDiffableDataSource, AppKit_NSTableViewRowAction, 
+AppKit_NSText, AppKit_NSTextAlternatives, AppKit_NSTextAttachment, 
+AppKit_NSTextAttachmentCell, AppKit_NSTextAttachmentViewProvider, 
+AppKit_NSTextBlock, AppKit_NSTextCheckingController, 
+AppKit_NSTextContainer, AppKit_NSTextContentManager, 
+AppKit_NSTextContentStorage, AppKit_NSTextElement, AppKit_NSTextField, 
+AppKit_NSTextFieldCell, AppKit_NSTextFinder, AppKit_NSTextInputContext, 
+AppKit_NSTextLayoutFragment, AppKit_NSTextLayoutManager, 
+AppKit_NSTextLineFragment, AppKit_NSTextList, AppKit_NSTextListElement, 
+AppKit_NSTextParagraph, AppKit_NSTextRange, AppKit_NSTextSelection, 
+AppKit_NSTextSelectionNavigation, AppKit_NSTextStorage, 
+AppKit_NSTextTab, AppKit_NSTextTable, AppKit_NSTextTableBlock, 
+AppKit_NSTextView, AppKit_NSTextViewportLayoutController, 
+AppKit_NSTintConfiguration, AppKit_NSTitlebarAccessoryViewController, 
+AppKit_NSTokenField, AppKit_NSTokenFieldCell, AppKit_NSToolbar, 
+AppKit_NSToolbarItem, AppKit_NSToolbarItemGroup, AppKit_NSTouch, 
+AppKit_NSTouchBar, AppKit_NSTouchBarItem, AppKit_NSTrackingArea, 
+AppKit_NSTrackingSeparatorToolbarItem, AppKit_NSTreeController, 
+AppKit_NSTreeNode, AppKit_NSTypesetter, AppKit_NSUserDefaultsController,
+ AppKit_NSUserInterfaceCompressionOptions, AppKit_NSView, 
+AppKit_NSViewAnimation, AppKit_NSViewController, 
+AppKit_NSVisualEffectView, AppKit_NSWindow, AppKit_NSWindowController, 
+AppKit_NSWindowTab, AppKit_NSWindowTabGroup, AppKit_NSWorkspace, 
+AppKit_NSWorkspaceAuthorization, AppKit_NSWorkspaceOpenConfiguration, 
+AppKit_all, CoreData, CoreData_NSAsynchronousFetchResult, 
+CoreData_NSPersistentStoreAsynchronousResult, 
+CoreData_NSPersistentStoreResult, Foundation, 
+Foundation_NSAffineTransform, Foundation_NSAppleEventDescriptor, 
+Foundation_NSAppleEventManager, Foundation_NSAppleScript, 
+Foundation_NSArchiver, Foundation_NSArray, 
+Foundation_NSAssertionHandler, Foundation_NSAttributedString, 
+Foundation_NSAttributedStringMarkdownParsingOptions, 
+Foundation_NSAttributedStringMarkdownSourcePosition, 
+Foundation_NSAutoreleasePool, Foundation_NSBackgroundActivityScheduler, 
+Foundation_NSBlockOperation, Foundation_NSBundle, 
+Foundation_NSBundleResourceRequest, Foundation_NSByteCountFormatter, 
+Foundation_NSCache, Foundation_NSCachedURLResponse, 
+Foundation_NSCalendar, Foundation_NSCalendarDate, 
+Foundation_NSCharacterSet, Foundation_NSClassDescription, 
+Foundation_NSCloneCommand, Foundation_NSCloseCommand, 
+Foundation_NSCoder, Foundation_NSComparisonPredicate, 
+Foundation_NSCompoundPredicate, Foundation_NSCondition, 
+Foundation_NSConditionLock, Foundation_NSConnection, 
+Foundation_NSConstantString, Foundation_NSCountCommand, 
+Foundation_NSCountedSet, Foundation_NSCreateCommand, Foundation_NSData, 
+Foundation_NSDataDetector, Foundation_NSDate, 
+Foundation_NSDateComponents, Foundation_NSDateComponentsFormatter, 
+Foundation_NSDateFormatter, Foundation_NSDateInterval, 
+Foundation_NSDateIntervalFormatter, Foundation_NSDecimalNumber, 
+Foundation_NSDecimalNumberHandler, Foundation_NSDeleteCommand, 
+Foundation_NSDictionary, Foundation_NSDimension, 
+Foundation_NSDirectoryEnumerator, Foundation_NSDistantObject, 
+Foundation_NSDistantObjectRequest, Foundation_NSDistributedLock, 
+Foundation_NSDistributedNotificationCenter, 
+Foundation_NSEnergyFormatter, Foundation_NSEnumerator, 
+Foundation_NSError, Foundation_NSException, Foundation_NSExistsCommand, 
+Foundation_NSExpression, Foundation_NSExtensionContext, 
+Foundation_NSExtensionItem, Foundation_NSFileAccessIntent, 
+Foundation_NSFileCoordinator, Foundation_NSFileHandle, 
+Foundation_NSFileManager, Foundation_NSFileProviderService, 
+Foundation_NSFileSecurity, Foundation_NSFileVersion, 
+Foundation_NSFileWrapper, Foundation_NSFormatter, 
+Foundation_NSGarbageCollector, Foundation_NSGetCommand, 
+Foundation_NSHTTPCookie, Foundation_NSHTTPCookieStorage, 
+Foundation_NSHTTPURLResponse, Foundation_NSHashTable, Foundation_NSHost,
+ Foundation_NSISO8601DateFormatter, Foundation_NSIndexPath, 
+Foundation_NSIndexSet, Foundation_NSIndexSpecifier, 
+Foundation_NSInflectionRule, Foundation_NSInflectionRuleExplicit, 
+Foundation_NSInputStream, Foundation_NSInvocation, 
+Foundation_NSInvocationOperation, Foundation_NSItemProvider, 
+Foundation_NSJSONSerialization, Foundation_NSKeyedArchiver, 
+Foundation_NSKeyedUnarchiver, Foundation_NSLengthFormatter, 
+Foundation_NSLinguisticTagger, Foundation_NSListFormatter, 
+Foundation_NSLocale, Foundation_NSLock, Foundation_NSLogicalTest, 
+Foundation_NSMachBootstrapServer, Foundation_NSMachPort, 
+Foundation_NSMapTable, Foundation_NSMassFormatter, 
+Foundation_NSMeasurement, Foundation_NSMeasurementFormatter, 
+Foundation_NSMessagePort, Foundation_NSMessagePortNameServer, 
+Foundation_NSMetadataItem, Foundation_NSMetadataQuery, 
+Foundation_NSMetadataQueryAttributeValueTuple, 
+Foundation_NSMetadataQueryResultGroup, Foundation_NSMethodSignature, 
+Foundation_NSMiddleSpecifier, Foundation_NSMorphology, 
+Foundation_NSMorphologyCustomPronoun, Foundation_NSMoveCommand, 
+Foundation_NSMutableArray, Foundation_NSMutableAttributedString, 
+Foundation_NSMutableCharacterSet, Foundation_NSMutableData, 
+Foundation_NSMutableDictionary, Foundation_NSMutableIndexSet, 
+Foundation_NSMutableOrderedSet, Foundation_NSMutableSet, 
+Foundation_NSMutableString, Foundation_NSMutableURLRequest, 
+Foundation_NSNameSpecifier, Foundation_NSNetService, 
+Foundation_NSNetServiceBrowser, Foundation_NSNotification, 
+Foundation_NSNotificationCenter, Foundation_NSNotificationQueue, 
+Foundation_NSNull, Foundation_NSNumber, Foundation_NSNumberFormatter, 
+Foundation_NSOperation, Foundation_NSOperationQueue, 
+Foundation_NSOrderedCollectionChange, 
+Foundation_NSOrderedCollectionDifference, Foundation_NSOrderedSet, 
+Foundation_NSOrthography, Foundation_NSOutputStream, 
+Foundation_NSPersonNameComponents, 
+Foundation_NSPersonNameComponentsFormatter, Foundation_NSPipe, 
+Foundation_NSPointerArray, Foundation_NSPointerFunctions, 
+Foundation_NSPort, Foundation_NSPortCoder, Foundation_NSPortMessage, 
+Foundation_NSPortNameServer, Foundation_NSPositionalSpecifier, 
+Foundation_NSPredicate, Foundation_NSPresentationIntent, 
+Foundation_NSProcessInfo, Foundation_NSProgress, 
+Foundation_NSPropertyListSerialization, Foundation_NSPropertySpecifier, 
+Foundation_NSProtocolChecker, Foundation_NSProxy, 
+Foundation_NSPurgeableData, Foundation_NSQuitCommand, 
+Foundation_NSRandomSpecifier, Foundation_NSRangeSpecifier, 
+Foundation_NSRecursiveLock, Foundation_NSRegularExpression, 
+Foundation_NSRelativeDateTimeFormatter, Foundation_NSRelativeSpecifier, 
+Foundation_NSRunLoop, Foundation_NSScanner, 
+Foundation_NSScriptClassDescription, Foundation_NSScriptCoercionHandler,
+ Foundation_NSScriptCommand, Foundation_NSScriptCommandDescription, 
+Foundation_NSScriptExecutionContext, Foundation_NSScriptObjectSpecifier,
+ Foundation_NSScriptSuiteRegistry, Foundation_NSScriptWhoseTest, 
+Foundation_NSSecureUnarchiveFromDataTransformer, Foundation_NSSet, 
+Foundation_NSSetCommand, Foundation_NSSimpleCString, 
+Foundation_NSSocketPort, Foundation_NSSocketPortNameServer, 
+Foundation_NSSortDescriptor, Foundation_NSSpecifierTest, 
+Foundation_NSSpellServer, Foundation_NSStream, Foundation_NSString, 
+Foundation_NSTask, Foundation_NSTextCheckingResult, Foundation_NSThread,
+ Foundation_NSTimeZone, Foundation_NSTimer, Foundation_NSURL, 
+Foundation_NSURLAuthenticationChallenge, Foundation_NSURLCache, 
+Foundation_NSURLComponents, Foundation_NSURLConnection, 
+Foundation_NSURLCredential, Foundation_NSURLCredentialStorage, 
+Foundation_NSURLDownload, Foundation_NSURLHandle, 
+Foundation_NSURLProtectionSpace, Foundation_NSURLProtocol, 
+Foundation_NSURLQueryItem, Foundation_NSURLRequest, 
+Foundation_NSURLResponse, Foundation_NSURLSession, 
+Foundation_NSURLSessionConfiguration, Foundation_NSURLSessionDataTask, 
+Foundation_NSURLSessionDownloadTask, Foundation_NSURLSessionStreamTask, 
+Foundation_NSURLSessionTask, Foundation_NSURLSessionTaskMetrics, 
+Foundation_NSURLSessionTaskTransactionMetrics, 
+Foundation_NSURLSessionUploadTask, 
+Foundation_NSURLSessionWebSocketMessage, 
+Foundation_NSURLSessionWebSocketTask, Foundation_NSUUID, 
+Foundation_NSUbiquitousKeyValueStore, Foundation_NSUnarchiver, 
+Foundation_NSUndoManager, Foundation_NSUniqueIDSpecifier, 
+Foundation_NSUnit, Foundation_NSUnitAcceleration, 
+Foundation_NSUnitAngle, Foundation_NSUnitArea, 
+Foundation_NSUnitConcentrationMass, Foundation_NSUnitConverter, 
+Foundation_NSUnitConverterLinear, Foundation_NSUnitDispersion, 
+Foundation_NSUnitDuration, Foundation_NSUnitElectricCharge, 
+Foundation_NSUnitElectricCurrent, 
+Foundation_NSUnitElectricPotentialDifference, 
+Foundation_NSUnitElectricResistance, Foundation_NSUnitEnergy, 
+Foundation_NSUnitFrequency, Foundation_NSUnitFuelEfficiency, 
+Foundation_NSUnitIlluminance, Foundation_NSUnitInformationStorage, 
+Foundation_NSUnitLength, Foundation_NSUnitMass, Foundation_NSUnitPower, 
+Foundation_NSUnitPressure, Foundation_NSUnitSpeed, 
+Foundation_NSUnitTemperature, Foundation_NSUnitVolume, 
+Foundation_NSUserActivity, Foundation_NSUserAppleScriptTask, 
+Foundation_NSUserAutomatorTask, Foundation_NSUserDefaults, 
+Foundation_NSUserNotification, Foundation_NSUserNotificationAction, 
+Foundation_NSUserNotificationCenter, Foundation_NSUserScriptTask, 
+Foundation_NSUserUnixTask, Foundation_NSValue, 
+Foundation_NSValueTransformer, Foundation_NSWhoseSpecifier, 
+Foundation_NSXMLDTD, Foundation_NSXMLDTDNode, Foundation_NSXMLDocument, 
+Foundation_NSXMLElement, Foundation_NSXMLNode, Foundation_NSXMLParser, 
+Foundation_NSXPCCoder, Foundation_NSXPCConnection, 
+Foundation_NSXPCInterface, Foundation_NSXPCListener, 
+Foundation_NSXPCListenerEndpoint, Foundation_all, alloc, apple, block, 
+block2, default, objc2, objective-c, std</td>
+</tr>
+
+<tr>
+  <td>2.</td>
+  <td>objc2 v0.4.1</td>
+  <td>1.5s</td>
+  <td>0.4s (23%)</td>
+  <td>alloc, apple, default, std</td>
+</tr>
+
+<tr>
+  <td>3.</td>
+  <td>objc-sys v0.3.1 build script</td>
+  <td>0.7s</td>
+  <td></td>
+  <td>alloc, apple, std</td>
+</tr>
+
+<tr>
+  <td>4.</td>
+  <td>block-sys v0.2.0 build script</td>
+  <td>0.7s</td>
+  <td></td>
+  <td>alloc, apple, std</td>
+</tr>
+
+<tr>
+  <td>5.</td>
+  <td>objc2-encode v3.0.0</td>
+  <td>0.7s</td>
+  <td>0.3s (50%)</td>
+  <td>alloc, std</td>
+</tr>
+
+<tr>
+  <td>6.</td>
+  <td>system_status_bar_macos v0.2.0</td>
+  <td>0.6s</td>
+  <td>0.4s (69%)</td>
+  <td></td>
+</tr>
+
+<tr>
+  <td>7.</td>
+  <td>block2 v0.3.0</td>
+  <td>0.3s</td>
+  <td>0.1s (37%)</td>
+  <td>alloc, apple, default, std</td>
+</tr>
+
+<tr>
+  <td>8.</td>
+  <td>objc-sys v0.3.1 build script (run)</td>
+  <td>0.2s</td>
+  <td></td>
+  <td>alloc, apple, std</td>
+</tr>
+
+<tr>
+  <td>9.</td>
+  <td>objc-sys v0.3.1</td>
+  <td>0.1s</td>
+  <td>0.0s (22%)</td>
+  <td>alloc, apple, std</td>
+</tr>
+
+<tr>
+  <td>10.</td>
+  <td>block-sys v0.2.0 build script (run)</td>
+  <td>0.1s</td>
+  <td></td>
+  <td>alloc, apple, std</td>
+</tr>
+
+<tr>
+  <td>11.</td>
+  <td>block-sys v0.2.0</td>
+  <td>0.1s</td>
+  <td>0.0s (14%)</td>
+  <td>alloc, apple, std</td>
+</tr>
+</tbody>
+</table>
+<script>
+DURATION = 51;
+const UNIT_DATA = [
+  {
+    "i": 0,
+    "name": "objc-sys",
+    "version": "0.3.1",
+    "mode": "todo",
+    "target": " build script",
+    "start": 0.21,
+    "duration": 0.71,
+    "rmeta_time": null,
+    "unlocked_units": [
+      4
+    ],
+    "unlocked_rmeta_units": []
+  },
+  {
+    "i": 1,
+    "name": "objc2-encode",
+    "version": "3.0.0",
+    "mode": "todo",
+    "target": "",
+    "start": 0.21,
+    "duration": 0.66,
+    "rmeta_time": 0.33,
+    "unlocked_units": [],
+    "unlocked_rmeta_units": []
+  },
+  {
+    "i": 2,
+    "name": "block-sys",
+    "version": "0.2.0",
+    "mode": "todo",
+    "target": " build script",
+    "start": 0.21,
+    "duration": 0.71,
+    "rmeta_time": null,
+    "unlocked_units": [
+      3
+    ],
+    "unlocked_rmeta_units": []
+  },
+  {
+    "i": 3,
+    "name": "block-sys",
+    "version": "0.2.0",
+    "mode": "run-custom-build",
+    "target": " build script (run)",
+    "start": 0.92,
+    "duration": 0.09,
+    "rmeta_time": null,
+    "unlocked_units": [
+      5
+    ],
+    "unlocked_rmeta_units": []
+  },
+  {
+    "i": 4,
+    "name": "objc-sys",
+    "version": "0.3.1",
+    "mode": "run-custom-build",
+    "target": " build script (run)",
+    "start": 0.92,
+    "duration": 0.16,
+    "rmeta_time": null,
+    "unlocked_units": [
+      6
+    ],
+    "unlocked_rmeta_units": []
+  },
+  {
+    "i": 5,
+    "name": "block-sys",
+    "version": "0.2.0",
+    "mode": "todo",
+    "target": "",
+    "start": 1.01,
+    "duration": 0.06,
+    "rmeta_time": 0.05,
+    "unlocked_units": [],
+    "unlocked_rmeta_units": []
+  },
+  {
+    "i": 6,
+    "name": "objc-sys",
+    "version": "0.3.1",
+    "mode": "todo",
+    "target": "",
+    "start": 1.08,
+    "duration": 0.12,
+    "rmeta_time": 0.09,
+    "unlocked_units": [],
+    "unlocked_rmeta_units": [
+      7
+    ]
+  },
+  {
+    "i": 7,
+    "name": "objc2",
+    "version": "0.4.1",
+    "mode": "todo",
+    "target": "",
+    "start": 1.17,
+    "duration": 1.55,
+    "rmeta_time": 1.2,
+    "unlocked_units": [],
+    "unlocked_rmeta_units": [
+      8
+    ]
+  },
+  {
+    "i": 8,
+    "name": "block2",
+    "version": "0.3.0",
+    "mode": "todo",
+    "target": "",
+    "start": 2.37,
+    "duration": 0.31,
+    "rmeta_time": 0.2,
+    "unlocked_units": [],
+    "unlocked_rmeta_units": [
+      9
+    ]
+  },
+  {
+    "i": 9,
+    "name": "icrate",
+    "version": "0.0.4",
+    "mode": "todo",
+    "target": "",
+    "start": 2.61,
+    "duration": 47.99,
+    "rmeta_time": 36.35,
+    "unlocked_units": [],
+    "unlocked_rmeta_units": [
+      10
+    ]
+  },
+  {
+    "i": 10,
+    "name": "system_status_bar_macos",
+    "version": "0.2.0",
+    "mode": "todo",
+    "target": "",
+    "start": 38.96,
+    "duration": 0.57,
+    "rmeta_time": 0.17,
+    "unlocked_units": [],
+    "unlocked_rmeta_units": []
+  }
+];
+const CONCURRENCY_DATA = [
+  {
+    "t": 0.212869654,
+    "active": 1,
+    "waiting": 2,
+    "inactive": 8
+  },
+  {
+    "t": 0.212941439,
+    "active": 3,
+    "waiting": 0,
+    "inactive": 8
+  },
+  {
+    "t": 0.212973668,
+    "active": 3,
+    "waiting": 0,
+    "inactive": 8
+  },
+  {
+    "t": 0.212998369,
+    "active": 3,
+    "waiting": 0,
+    "inactive": 8
+  },
+  {
+    "t": 0.54447471,
+    "active": 3,
+    "waiting": 0,
+    "inactive": 8
+  },
+  {
+    "t": 0.870498236,
+    "active": 2,
+    "waiting": 0,
+    "inactive": 8
+  },
+  {
+    "t": 0.920708576,
+    "active": 2,
+    "waiting": 0,
+    "inactive": 7
+  },
+  {
+    "t": 0.920739516,
+    "active": 2,
+    "waiting": 0,
+    "inactive": 7
+  },
+  {
+    "t": 0.920814348,
+    "active": 2,
+    "waiting": 0,
+    "inactive": 6
+  },
+  {
+    "t": 0.920880916,
+    "active": 2,
+    "waiting": 0,
+    "inactive": 6
+  },
+  {
+    "t": 1.006900163,
+    "active": 2,
+    "waiting": 0,
+    "inactive": 5
+  },
+  {
+    "t": 1.006986718,
+    "active": 2,
+    "waiting": 0,
+    "inactive": 5
+  },
+  {
+    "t": 1.05855275,
+    "active": 2,
+    "waiting": 0,
+    "inactive": 5
+  },
+  {
+    "t": 1.066931325,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 5
+  },
+  {
+    "t": 1.079576366,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 4
+  },
+  {
+    "t": 1.07967983,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 4
+  },
+  {
+    "t": 1.170021531,
+    "active": 1,
+    "waiting": 1,
+    "inactive": 3
+  },
+  {
+    "t": 1.1701594339999999,
+    "active": 2,
+    "waiting": 0,
+    "inactive": 3
+  },
+  {
+    "t": 1.170280601,
+    "active": 2,
+    "waiting": 0,
+    "inactive": 3
+  },
+  {
+    "t": 1.194894067,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 3
+  },
+  {
+    "t": 1.697630131,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 3
+  },
+  {
+    "t": 2.20023912,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 3
+  },
+  {
+    "t": 2.36549285,
+    "active": 1,
+    "waiting": 1,
+    "inactive": 2
+  },
+  {
+    "t": 2.365588253,
+    "active": 2,
+    "waiting": 0,
+    "inactive": 2
+  },
+  {
+    "t": 2.365725557,
+    "active": 2,
+    "waiting": 0,
+    "inactive": 2
+  },
+  {
+    "t": 2.561017708,
+    "active": 2,
+    "waiting": 1,
+    "inactive": 1
+  },
+  {
+    "t": 2.609436973,
+    "active": 3,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 2.609930907,
+    "active": 3,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 2.674496177,
+    "active": 2,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 2.716866005,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 3.220253621,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 3.72496644,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 4.226450913,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 4.7311869699999995,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 5.233309543,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 5.737917219,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 6.239138087,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 6.743251824,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 7.24696386,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 7.750538513,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 8.255037316,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 8.756785276,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 9.261191776,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 9.764299633,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 10.264574397,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 10.767247796,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 11.272047819,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 11.776246682,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 12.280344223,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 12.783722285,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 13.288521148,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 13.790993867,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 14.293336695,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 14.797302048,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 15.302316809,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 15.807340099,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 16.312398754,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 16.813869919,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 17.31486093,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 17.815606363,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 18.316422755,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 18.820096226,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 19.324942147,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 19.825453607,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 20.329378827,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 20.832856981,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 21.337861341,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 21.839565375,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 22.343513425,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 22.846780626,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 23.348088543,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 23.852246727,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 24.356208725,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 24.859477202,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 25.364554476,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 25.869258464,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 26.373681012,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 26.877882509,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 27.379264227,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 27.882985406,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 28.38732612,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 28.891562241,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 29.391686981,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 29.896788295,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 30.397707936,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 30.902357524,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 31.407351146,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 31.911024235,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 32.415822855,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 32.919071143,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 33.422368809,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 33.926085387,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 34.430136919,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 34.933290533,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 35.434901988,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 35.937885157,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 36.442792574,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 36.946795143,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 37.44889128,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 37.953489618,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 38.455811493,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 38.960282519,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 1
+  },
+  {
+    "t": 38.963991249,
+    "active": 1,
+    "waiting": 1,
+    "inactive": 0
+  },
+  {
+    "t": 38.964096879,
+    "active": 2,
+    "waiting": 0,
+    "inactive": 0
+  },
+  {
+    "t": 38.964232706,
+    "active": 2,
+    "waiting": 0,
+    "inactive": 0
+  },
+  {
+    "t": 39.1377258,
+    "active": 2,
+    "waiting": 0,
+    "inactive": 0
+  },
+  {
+    "t": 39.529362366,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 0
+  },
+  {
+    "t": 40.03383553,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 0
+  },
+  {
+    "t": 40.537928605,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 0
+  },
+  {
+    "t": 41.039701858,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 0
+  },
+  {
+    "t": 41.543636105,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 0
+  },
+  {
+    "t": 42.04439459,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 0
+  },
+  {
+    "t": 42.547011308,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 0
+  },
+  {
+    "t": 43.051348885,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 0
+  },
+  {
+    "t": 43.557070912,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 0
+  },
+  {
+    "t": 44.058075775,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 0
+  },
+  {
+    "t": 44.560443682,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 0
+  },
+  {
+    "t": 45.061903549,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 0
+  },
+  {
+    "t": 45.562501768,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 0
+  },
+  {
+    "t": 46.067636802,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 0
+  },
+  {
+    "t": 46.571475629,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 0
+  },
+  {
+    "t": 47.077719736,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 0
+  },
+  {
+    "t": 47.579542755,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 0
+  },
+  {
+    "t": 48.08028259,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 0
+  },
+  {
+    "t": 48.581401943,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 0
+  },
+  {
+    "t": 49.08248687,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 0
+  },
+  {
+    "t": 49.586582038,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 0
+  },
+  {
+    "t": 50.0898305,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 0
+  },
+  {
+    "t": 50.590414893,
+    "active": 1,
+    "waiting": 0,
+    "inactive": 0
+  },
+  {
+    "t": 50.599812861,
+    "active": 0,
+    "waiting": 0,
+    "inactive": 0
+  }
+];
+const CPU_USAGE = [
+  [
+    0.544477188,
+    37.65060240963856
+  ],
+  [
+    0.870498415,
+    62.83524904214559
+  ],
+  [
+    1.006900345,
+    46.36363636363636
+  ],
+  [
+    1.170031686,
+    26.19047619047619
+  ],
+  [
+    1.697631836,
+    24.64454976303317
+  ],
+  [
+    2.200241084,
+    26.799007444168737
+  ],
+  [
+    2.365493131,
+    19.68503937007874
+  ],
+  [
+    2.5610178919999997,
+    66.66666666666667
+  ],
+  [
+    2.674498296,
+    91.48936170212767
+  ],
+  [
+    3.220255607,
+    17.09006928406467
+  ],
+  [
+    3.724968015,
+    19.700748129675816
+  ],
+  [
+    4.226482301,
+    20.740740740740733
+  ],
+  [
+    4.731188499,
+    21.945137157107226
+  ],
+  [
+    5.233311145,
+    22.613065326633162
+  ],
+  [
+    5.737919424,
+    17.53086419753086
+  ],
+  [
+    6.239139522,
+    16.75
+  ],
+  [
+    6.743253734,
+    16.4179104477612
+  ],
+  [
+    7.246966161,
+    22.029702970297024
+  ],
+  [
+    7.750540279,
+    16.708229426433917
+  ],
+  [
+    8.255039549,
+    18.952618453865327
+  ],
+  [
+    8.756787048,
+    22.5
+  ],
+  [
+    9.261193531,
+    15.671641791044777
+  ],
+  [
+    9.764301321,
+    19.90049751243781
+  ],
+  [
+    10.264576139,
+    17.794486215538853
+  ],
+  [
+    10.767249537,
+    19.90049751243781
+  ],
+  [
+    11.272049693,
+    17.70573566084788
+  ],
+  [
+    11.77624838,
+    17.369727047146398
+  ],
+  [
+    12.28034614,
+    21.83622828784118
+  ],
+  [
+    12.783724179,
+    31.25
+  ],
+  [
+    13.288522989,
+    30.19801980198021
+  ],
+  [
+    13.790995602,
+    36.02015113350126
+  ],
+  [
+    14.29333904,
+    22.222222222222214
+  ],
+  [
+    14.797315639,
+    17.54385964912281
+  ],
+  [
+    15.302331809,
+    16.625310173697272
+  ],
+  [
+    15.807342425,
+    19.451371571072315
+  ],
+  [
+    16.312414463,
+    17.444717444717455
+  ],
+  [
+    16.813872032,
+    18.045112781954884
+  ],
+  [
+    17.314878267,
+    17.424242424242422
+  ],
+  [
+    17.815608791,
+    21.25
+  ],
+  [
+    18.316425016,
+    22.194513715710727
+  ],
+  [
+    18.820099383,
+    19.451371571072315
+  ],
+  [
+    19.324943669,
+    18.965517241379317
+  ],
+  [
+    19.82545564,
+    16.582914572864325
+  ],
+  [
+    20.329397545,
+    16.0
+  ],
+  [
+    20.832858596,
+    18.25
+  ],
+  [
+    21.337863379,
+    18.024691358024697
+  ],
+  [
+    21.839567719,
+    16.791979949874687
+  ],
+  [
+    22.343515623,
+    17.079207920792086
+  ],
+  [
+    22.846782341,
+    16.873449131513652
+  ],
+  [
+    23.348090728,
+    18.939393939393938
+  ],
+  [
+    23.852249174,
+    20.792079207920793
+  ],
+  [
+    24.356210742000002,
+    16.708229426433917
+  ],
+  [
+    24.859478745,
+    16.584158415841586
+  ],
+  [
+    25.36455611,
+    16.91542288557214
+  ],
+  [
+    25.869260122,
+    16.54135338345864
+  ],
+  [
+    26.373682905,
+    16.911764705882348
+  ],
+  [
+    26.877883889,
+    16.834170854271363
+  ],
+  [
+    27.379265556,
+    19.201995012468828
+  ],
+  [
+    27.882986756,
+    20.04950495049505
+  ],
+  [
+    28.387328079,
+    22.0
+  ],
+  [
+    28.891564087,
+    19.90049751243781
+  ],
+  [
+    29.391688816,
+    16.20947630922693
+  ],
+  [
+    29.896790298,
+    17.369727047146398
+  ],
+  [
+    30.397709802,
+    17.085427135678387
+  ],
+  [
+    30.902359179,
+    19.451371571072315
+  ],
+  [
+    31.407353206,
+    18.91891891891892
+  ],
+  [
+    31.911025702,
+    16.873449131513652
+  ],
+  [
+    32.415824705,
+    16.20947630922693
+  ],
+  [
+    32.919072539,
+    17.794486215538853
+  ],
+  [
+    33.422370545,
+    16.625310173697272
+  ],
+  [
+    33.926087042,
+    20.544554455445535
+  ],
+  [
+    34.43013838,
+    16.25
+  ],
+  [
+    34.9332926,
+    16.20947630922693
+  ],
+  [
+    35.434904314,
+    16.20947630922693
+  ],
+  [
+    35.937886717,
+    19.65174129353234
+  ],
+  [
+    36.442794447,
+    21.5
+  ],
+  [
+    36.946796648,
+    25.4950495049505
+  ],
+  [
+    37.448905301,
+    24.688279301745638
+  ],
+  [
+    37.953491316,
+    20.04950495049505
+  ],
+  [
+    38.455813457,
+    17.085427135678387
+  ],
+  [
+    38.960284148,
+    20.895522388059703
+  ],
+  [
+    39.137727741,
+    28.671328671328666
+  ],
+  [
+    39.529362559,
+    66.34615384615384
+  ],
+  [
+    40.033837016,
+    16.666666666666657
+  ],
+  [
+    40.537930137000004,
+    16.584158415841586
+  ],
+  [
+    41.039703421,
+    30.92269326683291
+  ],
+  [
+    41.543637902,
+    84.21052631578948
+  ],
+  [
+    42.044396354,
+    97.48743718592965
+  ],
+  [
+    42.547012978,
+    97.76674937965261
+  ],
+  [
+    43.051350568,
+    97.52475247524752
+  ],
+  [
+    43.557072884,
+    98.0295566502463
+  ],
+  [
+    44.058077725,
+    89.47368421052632
+  ],
+  [
+    44.560445528,
+    54.61346633416459
+  ],
+  [
+    45.061905287,
+    30.57644110275689
+  ],
+  [
+    45.562503453,
+    98.00995024875621
+  ],
+  [
+    46.067638806,
+    97.0
+  ],
+  [
+    46.571477983,
+    95.53349875930522
+  ],
+  [
+    47.077722199,
+    97.53086419753086
+  ],
+  [
+    47.579544439,
+    97.01492537313433
+  ],
+  [
+    48.080284721,
+    98.49624060150376
+  ],
+  [
+    48.581404004,
+    97.75
+  ],
+  [
+    49.082489438,
+    97.2568578553616
+  ],
+  [
+    49.586584128,
+    79.85074626865672
+  ],
+  [
+    50.089832348,
+    17.45635910224439
+  ],
+  [
+    50.590418248,
+    18.362282878411904
+  ]
+];
+// Position of the vertical axis.
+const X_LINE = 50;
+// General-use margin size.
+const MARGIN = 5;
+// Position of the horizontal axis, relative to the bottom.
+const Y_LINE = 35;
+// Minimum distance between time tick labels.
+const MIN_TICK_DIST = 50;
+// Radius for rounded rectangle corners.
+const RADIUS = 3;
+// Height of unit boxes.
+const BOX_HEIGHT = 25;
+// Distance between Y tick marks on the unit graph.
+const Y_TICK_DIST = BOX_HEIGHT + 2;
+// Rects used for mouseover detection.
+// Objects of {x, y, x2, y2, i} where `i` is the index into UNIT_DATA.
+let HIT_BOXES = [];
+// Index into UNIT_DATA of the last unit hovered over by mouse.
+let LAST_HOVER = null;
+// Key is unit index, value is {x, y, width, rmeta_x} of the box.
+let UNIT_COORDS = {};
+// Map of unit index to the index it was unlocked by.
+let REVERSE_UNIT_DEPS = {};
+let REVERSE_UNIT_RMETA_DEPS = {};
+for (let n=0; n<UNIT_DATA.length; n++) {
+  let unit = UNIT_DATA[n];
+  for (let unlocked of unit.unlocked_units) {
+    REVERSE_UNIT_DEPS[unlocked] = n;
+  }
+  for (let unlocked of unit.unlocked_rmeta_units) {
+    REVERSE_UNIT_RMETA_DEPS[unlocked] = n;
+  }
+}
+
+function render_pipeline_graph() {
+  if (UNIT_DATA.length == 0) {
+    return;
+  }
+  let g = document.getElementById('pipeline-graph');
+  HIT_BOXES.length = 0;
+  g.onmousemove = pipeline_mousemove;
+  const min_time = document.getElementById('min-unit-time').valueAsNumber;
+
+  const units = UNIT_DATA.filter(unit => unit.duration >= min_time);
+
+  const graph_height = Y_TICK_DIST * units.length;
+  const {ctx, graph_width, canvas_width, canvas_height, px_per_sec} = draw_graph_axes('pipeline-graph', graph_height);
+  const container = document.getElementById('pipeline-container');
+  container.style.width = canvas_width;
+  container.style.height = canvas_height;
+
+  // Canvas for hover highlights. This is a separate layer to improve performance.
+  const linectx = setup_canvas('pipeline-graph-lines', canvas_width, canvas_height);
+  linectx.clearRect(0, 0, canvas_width, canvas_height);
+
+  // Draw Y tick marks.
+  for (let n=1; n<units.length; n++) {
+    const y = MARGIN + Y_TICK_DIST * n;
+    ctx.beginPath();
+    ctx.moveTo(X_LINE, y);
+    ctx.lineTo(X_LINE-5, y);
+    ctx.stroke();
+  }
+
+  // Draw Y labels.
+  ctx.textAlign = 'end';
+  ctx.textBaseline = 'middle';
+  for (let n=0; n<units.length; n++) {
+    let y = MARGIN + Y_TICK_DIST * n + Y_TICK_DIST / 2;
+    ctx.fillText(n+1, X_LINE-4, y);
+  }
+
+  // Draw the graph.
+  ctx.save();
+  ctx.translate(X_LINE, MARGIN);
+
+  // Compute x,y coordinate of each block.
+  // We also populate a map with the count of each unit name to disambiguate if necessary
+  const unitCount = new Map();
+  UNIT_COORDS = {};
+  for (i=0; i<units.length; i++) {
+    let unit = units[i];
+    let y = i * Y_TICK_DIST + 1;
+    let x = px_per_sec * unit.start;
+    let rmeta_x = null;
+    if (unit.rmeta_time != null) {
+      rmeta_x = x + px_per_sec * unit.rmeta_time;
+    }
+    let width = Math.max(px_per_sec * unit.duration, 1.0);
+    UNIT_COORDS[unit.i] = {x, y, width, rmeta_x};
+
+    const count = unitCount.get(unit.name) || 0;
+    unitCount.set(unit.name, count + 1);
+  }
+
+  // Draw the blocks.
+  for (i=0; i<units.length; i++) {
+    let unit = units[i];
+    let {x, y, width, rmeta_x} = UNIT_COORDS[unit.i];
+
+    HIT_BOXES.push({x: X_LINE+x, y:MARGIN+y, x2: X_LINE+x+width, y2: MARGIN+y+BOX_HEIGHT, i: unit.i});
+
+    ctx.beginPath();
+    ctx.fillStyle = unit.mode == 'run-custom-build' ? '#f0b165' : '#95cce8';
+    roundedRect(ctx, x, y, width, BOX_HEIGHT, RADIUS);
+    ctx.fill();
+
+    if (unit.rmeta_time != null) {
+      ctx.beginPath();
+      ctx.fillStyle = '#aa95e8';
+      let ctime = unit.duration - unit.rmeta_time;
+      roundedRect(ctx, rmeta_x, y, px_per_sec * ctime, BOX_HEIGHT, RADIUS);
+      ctx.fill();
+    }
+    ctx.fillStyle = "#000";
+    ctx.textAlign = 'start';
+    ctx.textBaseline = 'middle';
+    ctx.font = '14px sans-serif';
+
+    const labelName = (unitCount.get(unit.name) || 0) > 1 ? `${unit.name} (v${unit.version})${unit.target}` : `${unit.name}${unit.target}`;
+    const label = `${labelName}: ${unit.duration}s`;
+
+    const text_info = ctx.measureText(label);
+    const label_x = Math.min(x + 5.0, canvas_width - text_info.width - X_LINE);
+    ctx.fillText(label, label_x, y + BOX_HEIGHT / 2);
+    draw_dep_lines(ctx, unit.i, false);
+  }
+  ctx.restore();
+}
+
+// Draws lines from the given unit to the units it unlocks.
+function draw_dep_lines(ctx, unit_idx, highlighted) {
+  const unit = UNIT_DATA[unit_idx];
+  const {x, y, rmeta_x} = UNIT_COORDS[unit_idx];
+  ctx.save();
+  for (const unlocked of unit.unlocked_units) {
+    draw_one_dep_line(ctx, x, y, unlocked, highlighted);
+  }
+  for (const unlocked of unit.unlocked_rmeta_units) {
+    draw_one_dep_line(ctx, rmeta_x, y, unlocked, highlighted);
+  }
+  ctx.restore();
+}
+
+function draw_one_dep_line(ctx, from_x, from_y, to_unit, highlighted) {
+  if (to_unit in UNIT_COORDS) {
+    let {x: u_x, y: u_y} = UNIT_COORDS[to_unit];
+    ctx.strokeStyle = highlighted ? '#000' : '#ddd';
+    ctx.setLineDash([2]);
+    ctx.beginPath();
+    ctx.moveTo(from_x, from_y+BOX_HEIGHT/2);
+    ctx.lineTo(from_x-5, from_y+BOX_HEIGHT/2);
+    ctx.lineTo(from_x-5, u_y+BOX_HEIGHT/2);
+    ctx.lineTo(u_x, u_y+BOX_HEIGHT/2);
+    ctx.stroke();
+  }
+}
+
+function render_timing_graph() {
+  if (CONCURRENCY_DATA.length == 0) {
+    return;
+  }
+  const HEIGHT = 400;
+  const AXIS_HEIGHT = HEIGHT - MARGIN - Y_LINE;
+  const TOP_MARGIN = 10;
+  const GRAPH_HEIGHT = AXIS_HEIGHT - TOP_MARGIN;
+
+  const {canvas_width, graph_width, ctx} = draw_graph_axes('timing-graph', AXIS_HEIGHT);
+
+  // Draw Y tick marks and labels.
+  let max_v = 0;
+  for (c of CONCURRENCY_DATA) {
+    max_v = Math.max(max_v, c.active, c.waiting, c.inactive);
+  }
+  const px_per_v = GRAPH_HEIGHT / max_v;
+  const {step, tick_dist, num_ticks} = split_ticks(max_v, px_per_v, GRAPH_HEIGHT);
+  ctx.textAlign = 'end';
+  for (n=0; n<num_ticks; n++) {
+    let y = HEIGHT - Y_LINE - ((n + 1) * tick_dist);
+    ctx.beginPath();
+    ctx.moveTo(X_LINE, y);
+    ctx.lineTo(X_LINE-5, y);
+    ctx.stroke();
+    ctx.fillText((n+1) * step, X_LINE-10, y+5);
+  }
+
+  // Label the Y axis.
+  let label_y = (HEIGHT - Y_LINE) / 2;
+  ctx.save();
+  ctx.translate(15, label_y);
+  ctx.rotate(3*Math.PI/2);
+  ctx.textAlign = 'center';
+  ctx.fillText('# Units', 0, 0);
+  ctx.restore();
+
+  // Draw the graph.
+  ctx.save();
+  ctx.translate(X_LINE, MARGIN);
+
+  function coord(t, v) {
+    return {
+      x: graph_width * (t/DURATION),
+      y: TOP_MARGIN + GRAPH_HEIGHT * (1.0 - (v / max_v))
+    };
+  }
+
+  const cpuFillStyle = 'rgba(250, 119, 0, 0.2)';
+  if (CPU_USAGE.length > 1) {
+    ctx.beginPath();
+    ctx.fillStyle = cpuFillStyle;
+    let bottomLeft = coord(CPU_USAGE[0][0], 0);
+    ctx.moveTo(bottomLeft.x, bottomLeft.y);
+    for (let i=0; i < CPU_USAGE.length; i++) {
+      let [time, usage] = CPU_USAGE[i];
+      let {x, y} = coord(time, usage / 100.0 * max_v);
+      ctx.lineTo(x, y);
+    }
+    let bottomRight = coord(CPU_USAGE[CPU_USAGE.length - 1][0], 0);
+    ctx.lineTo(bottomRight.x, bottomRight.y);
+    ctx.fill();
+  }
+
+  function draw_line(style, key) {
+    let first = CONCURRENCY_DATA[0];
+    let last = coord(first.t, key(first));
+    ctx.strokeStyle = style;
+    ctx.beginPath();
+    ctx.moveTo(last.x, last.y);
+    for (let i=1; i<CONCURRENCY_DATA.length; i++) {
+      let c = CONCURRENCY_DATA[i];
+      let {x, y} = coord(c.t, key(c));
+      ctx.lineTo(x, last.y);
+      ctx.lineTo(x, y);
+      last = {x, y};
+    }
+    ctx.stroke();
+  }
+
+  draw_line('blue', function(c) {return c.inactive;});
+  draw_line('red', function(c) {return c.waiting;});
+  draw_line('green', function(c) {return c.active;});
+
+  // Draw a legend.
+  ctx.restore();
+  ctx.save();
+  ctx.translate(canvas_width-200, MARGIN);
+  // background
+  ctx.fillStyle = '#fff';
+  ctx.strokeStyle = '#000';
+  ctx.lineWidth = 1;
+  ctx.textBaseline = 'middle'
+  ctx.textAlign = 'start';
+  ctx.beginPath();
+  ctx.rect(0, 0, 150, 82);
+  ctx.stroke();
+  ctx.fill();
+
+  ctx.fillStyle = '#000'
+  ctx.beginPath();
+  ctx.lineWidth = 2;
+  ctx.strokeStyle = 'red';
+  ctx.moveTo(5, 10);
+  ctx.lineTo(50, 10);
+  ctx.stroke();
+  ctx.fillText('Waiting', 54, 11);
+
+  ctx.beginPath();
+  ctx.strokeStyle = 'blue';
+  ctx.moveTo(5, 30);
+  ctx.lineTo(50, 30);
+  ctx.stroke();
+  ctx.fillText('Inactive', 54, 31);
+
+  ctx.beginPath();
+  ctx.strokeStyle = 'green';
+  ctx.moveTo(5, 50);
+  ctx.lineTo(50, 50);
+  ctx.stroke();
+  ctx.fillText('Active', 54, 51);
+
+  ctx.beginPath();
+  ctx.fillStyle = cpuFillStyle
+  ctx.fillRect(15, 60, 30, 15);
+  ctx.fill();
+  ctx.fillStyle = 'black';
+  ctx.fillText('CPU Usage', 54, 71);
+
+  ctx.restore();
+}
+
+function setup_canvas(id, width, height) {
+  let g = document.getElementById(id);
+  let dpr = window.devicePixelRatio || 1;
+  g.width = width * dpr;
+  g.height = height * dpr;
+  g.style.width = width;
+  g.style.height = height;
+  let ctx = g.getContext('2d');
+  ctx.scale(dpr, dpr);
+  return ctx;
+}
+
+function draw_graph_axes(id, graph_height) {
+  const scale = document.getElementById('scale').valueAsNumber;
+  // Cap the size of the graph. It is hard to view if it is too large, and
+  // browsers may not render a large graph because it takes too much memory.
+  // 4096 is still ridiculously large, and probably won't render on mobile
+  // browsers, but should be ok for many desktop environments.
+  const graph_width = Math.min(scale * DURATION, 4096);
+  const px_per_sec = graph_width / DURATION;
+  const canvas_width = Math.max(graph_width + X_LINE + 30, X_LINE + 250);
+  const canvas_height = graph_height + MARGIN + Y_LINE;
+  let ctx = setup_canvas(id, canvas_width, canvas_height);
+  ctx.fillStyle = '#f7f7f7';
+  ctx.fillRect(0, 0, canvas_width, canvas_height);
+
+  ctx.lineWidth = 2;
+  ctx.font = '16px sans-serif';
+  ctx.textAlign = 'center';
+
+  // Draw main axes.
+  ctx.beginPath();
+  ctx.moveTo(X_LINE, MARGIN);
+  ctx.lineTo(X_LINE, graph_height + MARGIN);
+  ctx.lineTo(X_LINE+graph_width+20, graph_height + MARGIN);
+  ctx.stroke();
+
+  // Draw X tick marks.
+  const {step, tick_dist, num_ticks} = split_ticks(DURATION, px_per_sec, graph_width);
+  ctx.fillStyle = '#303030';
+  for (let n=0; n<num_ticks; n++) {
+    const x = X_LINE + ((n + 1) * tick_dist);
+    ctx.beginPath();
+    ctx.moveTo(x, canvas_height-Y_LINE);
+    ctx.lineTo(x, canvas_height-Y_LINE+5);
+    ctx.stroke();
+
+    ctx.fillText(`${(n+1) * step}s`, x, canvas_height - Y_LINE + 20);
+  }
+
+  // Draw vertical lines.
+  ctx.strokeStyle = '#e6e6e6';
+  ctx.setLineDash([2, 4]);
+  for (n=0; n<num_ticks; n++) {
+    const x = X_LINE + ((n + 1) * tick_dist);
+    ctx.beginPath();
+    ctx.moveTo(x, MARGIN);
+    ctx.lineTo(x, MARGIN+graph_height);
+    ctx.stroke();
+  }
+  ctx.strokeStyle = '#000';
+  ctx.setLineDash([]);
+  return {canvas_width, canvas_height, graph_width, graph_height, ctx, px_per_sec};
+}
+
+// Determine the spacing and number of ticks along an axis.
+function split_ticks(max_value, px_per_v, max_px) {
+  const max_ticks = Math.floor(max_px / MIN_TICK_DIST);
+  if (max_ticks <= 1) {
+    // Graph is too small for even 1 tick.
+    return {step: max_value, tick_dist: max_px, num_ticks: 1};
+  }
+  let step;
+  if (max_value <= max_ticks) {
+    step = 1;
+  } else if (max_value <= max_ticks * 2) {
+    step = 2;
+  } else if (max_value <= max_ticks * 4) {
+    step = 4;
+  } else if (max_value <= max_ticks * 5) {
+    step = 5;
+  } else {
+    step = 10;
+    let count = 0;
+    while (true) {
+      if (count > 100) {
+        throw Error("tick loop too long");
+      }
+      count += 1;
+      if (max_value <= max_ticks * step) {
+        break;
+      }
+      step += 10;
+    }
+  }
+  const tick_dist = px_per_v * step;
+  const num_ticks = Math.floor(max_value / step);
+  return {step, tick_dist, num_ticks};
+}
+
+function codegen_time(unit) {
+  if (unit.rmeta_time == null) {
+    return null;
+  }
+  let ctime = unit.duration - unit.rmeta_time;
+  return [unit.rmeta_time, ctime];
+}
+
+function roundedRect(ctx, x, y, width, height, r) {
+  r = Math.min(r, width, height);
+  ctx.beginPath();
+  ctx.moveTo(x+r, y);
+  ctx.lineTo(x+width-r, y);
+  ctx.arc(x+width-r, y+r, r, 3*Math.PI/2, 0);
+  ctx.lineTo(x+width, y+height-r);
+  ctx.arc(x+width-r, y+height-r, r, 0, Math.PI/2);
+  ctx.lineTo(x+r, y+height);
+  ctx.arc(x+r, y+height-r, r, Math.PI/2, Math.PI);
+  ctx.lineTo(x, y-r);
+  ctx.arc(x+r, y+r, r, Math.PI, 3*Math.PI/2);
+  ctx.closePath();
+}
+
+function pipeline_mouse_hit(event) {
+  // This brute-force method can be optimized if needed.
+  for (let box of HIT_BOXES) {
+    if (event.offsetX >= box.x && event.offsetX <= box.x2 &&
+        event.offsetY >= box.y && event.offsetY <= box.y2) {
+      return box;
+    }
+  }
+}
+
+function pipeline_mousemove(event) {
+  // Highlight dependency lines on mouse hover.
+  let box = pipeline_mouse_hit(event);
+  if (box) {
+    if (box.i != LAST_HOVER) {
+      LAST_HOVER = box.i;
+      let g = document.getElementById('pipeline-graph-lines');
+      let ctx = g.getContext('2d');
+      ctx.clearRect(0, 0, g.width, g.height);
+      ctx.save();
+      ctx.translate(X_LINE, MARGIN);
+      ctx.lineWidth = 2;
+      draw_dep_lines(ctx, box.i, true);
+
+      if (box.i in REVERSE_UNIT_DEPS) {
+        const dep_unit = REVERSE_UNIT_DEPS[box.i];
+        if (dep_unit in UNIT_COORDS) {
+          const {x, y, rmeta_x} = UNIT_COORDS[dep_unit];
+          draw_one_dep_line(ctx, x, y, box.i, true);
+        }
+      }
+      if (box.i in REVERSE_UNIT_RMETA_DEPS) {
+        const dep_unit = REVERSE_UNIT_RMETA_DEPS[box.i];
+        if (dep_unit in UNIT_COORDS) {
+          const {x, y, rmeta_x} = UNIT_COORDS[dep_unit];
+          draw_one_dep_line(ctx, rmeta_x, y, box.i, true);
+        }
+      }
+      ctx.restore();
+    }
+  }
+}
+
+render_pipeline_graph();
+render_timing_graph();
+
+// Set up and handle controls.
+{
+  const range = document.getElementById('min-unit-time');
+  const time_output = document.getElementById('min-unit-time-output');
+  time_output.innerHTML = `${range.value}s`;
+  range.oninput = event => {
+    time_output.innerHTML = `${range.value}s`;
+    render_pipeline_graph();
+  };
+
+  const scale = document.getElementById('scale');
+  const scale_output = document.getElementById('scale-output');
+  scale_output.innerHTML = `${scale.value}`;
+  scale.oninput = event => {
+    scale_output.innerHTML = `${scale.value}`;
+    render_pipeline_graph();
+    render_timing_graph();
+  };
+}
+
+</script>
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

@@ -1,5 +1,5 @@
 ---
-title: "Updating to Powerlevel10k"
+title: "Updating to Powerlevel10k [Updated 03/12/2023]"
 date: 2023-11-25T05:33:00Z
 draft: false
 tags: 
@@ -64,3 +64,7 @@ The installation steps when using [Oh My Zsh](https://github.com/romkatv/powerle
     This is the primary reason for wanting to switch - no prompt lag! See [How do I configure instant prompt?](https://github.com/romkatv/powerlevel10k/blob/master/README.md#how-do-i-configure-instant-prompt) for a longer explanation of the different options and caveats.
 
 Enjoy the increased productivity 🚀
+
+---
+
+_Update_: I forgot to capture a screenshot to demonstrate the end result 🤦🏻‍♂️ Here goes: ![Powerlevel10k powered terminal](after-updating-to-powerlevel10k.a3b94f185b5e947c1f7dc4648c91fb3b2c00d853efcd97858d6056ee8b88c304.png)

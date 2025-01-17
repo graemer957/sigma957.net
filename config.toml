@@ -19,10 +19,15 @@ enableRobotsTXT = true
     url = "/tags/"
     weight = 2
   [[menu.main]]
+    identifier = "learning"
+    name = "Learning"
+    url = "/learning/"
+    weight = 3
+  [[menu.main]]
     identifier = "about"
     name = "About"
     url = "/about/"
-    weight = 3
+    weight = 4
 
 [params]
   author = "Graeme Read"

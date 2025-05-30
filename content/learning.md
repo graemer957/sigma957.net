@@ -52,3 +52,7 @@ is his [Crust of Rust](https://www.youtube.com/watch?v=rAl-9HwD858&list=PLqbS7AV
 some great material on lots of general computer science subjects from threads to
 how transistors run code. The presentation style really helps drive these
 principals home.
+
+- [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/)
+is a great MIT student-led course covering tooling from the command line; text
+editing, version control and scripting.

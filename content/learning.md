@@ -46,6 +46,9 @@ of valuable material. I would say this is definitely on the intermediate to
 advanced end, but Jon does well to make everything accessible. Of particular note
 is his [Crust of Rust](https://www.youtube.com/watch?v=rAl-9HwD858&list=PLqbS7AVVErFiWDOAVrPt7aYmnuuOLYvOa) playlist.
 
+- [Rust in Production](https://corrode.dev/podcast/) podcast is an excellent
+source of how companies are using Rust to solve real-world challenges.
+
 ## Computer Science
 
 - [Core Dumped](https://www.youtube.com/@CoreDumpped)'s YouTube channel has
